@@ -1,0 +1,41 @@
+kind,rank,combo,combo_n,combo_median,base,base_median,base_n,delta_rub,delta_pct
+pair_up,1,devops;sre,12,350175,devops,216250,348,133925,61.9
+pair_up,2,grafana;openshift,12,350000,grafana,237075,224,112925,47.6
+pair_up,3,bash;мониторинг,10,327250,bash,215000,219,112250,52.2
+pair_up,4,docker;openshift,12,322500,docker,217500,462,105000,48.3
+pair_up,5,linux;openshift,13,304500,linux,200000,478,104500,52.2
+pair_up,6,git;gitlab ci,19,300000,git,195750,196,104250,53.3
+pair_up,7,bash;субд,10,316375,bash,215000,219,101375,47.2
+pair_up,8,ci/cd;helm,12,325625,ci/cd,225000,223,100625,44.7
+pair_up,9,terraform;zabbix,38,300000,zabbix,200000,138,100000,50.0
+pair_up,10,kafka;zabbix,13,300000,zabbix,200000,138,100000,50.0
+pair_down,1,ansible;администрирование,11,112500,ansible,250000,267,-137500,-55.0
+pair_down,2,atlassian jira;prometheus,10,125000,prometheus,250000,180,-125000,-50.0
+pair_down,3,ansible;debian,11,140000,ansible,250000,267,-110000,-44.0
+pair_down,4,debian;postgresql,11,130500,postgresql,239250,245,-108750,-45.5
+pair_down,5,debian;linux,19,100000,linux,200000,478,-100000,-50.0
+pair_down,6,debian;nginx,12,100000,nginx,200000,192,-100000,-50.0
+pair_down,7,apache http server;администрирование серверов linux,11,100000,администрирование серверов linux,200000,121,-100000,-50.0
+pair_down,8,debian;администрирование серверов linux,10,100000,администрирование серверов linux,200000,121,-100000,-50.0
+pair_down,9,docker-compose;grafana,10,140000,grafana,237075,224,-97075,-40.9
+pair_down,10,ansible;atlassian jira,12,155000,ansible,250000,267,-95000,-38.0
+triple_up,1,git;gitlab ci;python,9,360000,git;python,180000,76,180000,100.0
+triple_up,2,git;gitlab ci;postgresql,11,360000,git;postgresql,200000,84,160000,80.0
+triple_up,3,gitlab ci;linux;python,9,360000,linux;python,208800,151,151200,72.4
+triple_up,4,grafana;helm;terraform,8,400625,grafana;terraform,250000,72,150625,60.2
+triple_up,5,ci/cd;python;zabbix,17,350000,ci/cd;python,200000,69,150000,75.0
+triple_up,6,ci/cd;elk;python,15,350000,ci/cd;python,200000,69,150000,75.0
+triple_up,7,ci/cd;git;jenkins,13,350000,ci/cd;git,200000,75,150000,75.0
+triple_up,8,git;gitlab;jenkins,11,350000,git;gitlab,200000,46,150000,75.0
+triple_up,9,bash;python;субд,8,350000,bash;python,200000,124,150000,75.0
+triple_up,10,ci/cd;python;удаленная работа,8,350000,ci/cd;python,200000,69,150000,75.0
+triple_down,1,docker-compose;linux;prometheus,9,100000,linux;prometheus,245000,132,-145000,-59.2
+triple_down,2,jenkins;postgresql;sql,9,100000,jenkins;postgresql,232125,38,-132125,-56.9
+triple_down,3,elk;prometheus;администрирование серверов linux,19,125000,elk;prometheus,250000,64,-125000,-50.0
+triple_down,4,ansible;atlassian jira;linux,10,125000,ansible;linux,250000,190,-125000,-50.0
+triple_down,5,ansible;atlassian jira;prometheus,10,125000,ansible;prometheus,250000,114,-125000,-50.0
+triple_down,6,kubernetes;postgresql;субд,9,125000,kubernetes;postgresql,250000,137,-125000,-50.0
+triple_down,7,postgresql;prometheus;английский язык,9,125000,postgresql;prometheus,250000,74,-125000,-50.0
+triple_down,8,atlassian jira;devops;prometheus,8,125000,devops;prometheus,250000,100,-125000,-50.0
+triple_down,9,ansible;python;английский язык,10,127750,ansible;python,250000,90,-122250,-48.9
+triple_down,10,atlassian jira;linux;prometheus,10,125000,linux;prometheus,245000,132,-120000,-49.0

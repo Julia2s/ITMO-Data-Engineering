@@ -1,0 +1,105 @@
+{
+  "tool": "regions",
+  "generated_at": "2026-10-26T08:21:11+00:00",
+  "variant_role": "DevOps-инженер",
+  "filter_mode": "role",
+  "environment": {
+    "python": "3.14.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 16
+  },
+  "input": {
+    "backend": "boto3",
+    "endpoint": "http://localhost:9010",
+    "bucket": "hh-lake",
+    "key": "raw/vacancies.csv",
+    "exists": true,
+    "size_bytes": 847619384,
+    "etag": "efb65458995932747001aa004592d19c-102",
+    "last_modified": "2026-10-26 08:17:32+00:00"
+  },
+  "results": {},
+  "regions": [
+    "Москва",
+    "Санкт-Петербург",
+    "Новосибирск"
+  ],
+  "stats": {
+    "rows_matched": 5158,
+    "rows_loaded": 5158,
+    "filter_mode": "role",
+    "reader": {
+      "lines_total": 229389,
+      "rows_parsed": 229387,
+      "skipped_blank": 1,
+      "skipped_malformed": 1,
+      "skipped_header": 0
+    }
+  },
+  "summary": [
+    {
+      "region": "Москва",
+      "n_total": 3007,
+      "n_with_skills": 2015,
+      "n_with_salary": 573,
+      "pct_with_salary": 19.1,
+      "median_salary_rub": 250000,
+      "p25_rub": 195750,
+      "p75_rub": 340000,
+      "mean_n_skills": 7.65,
+      "top_skill": "linux",
+      "top_pair": "docker;kubernetes",
+      "top_triple": "docker;kubernetes;linux",
+      "top_demand_skill": "yandex.cloud",
+      "top_demand_index": 1.75
+    },
+    {
+      "region": "Санкт-Петербург",
+      "n_total": 686,
+      "n_with_skills": 488,
+      "n_with_salary": 161,
+      "pct_with_salary": 23.5,
+      "median_salary_rub": 210000,
+      "p25_rub": 153000,
+      "p75_rub": 275000,
+      "mean_n_skills": 8.34,
+      "top_skill": "linux",
+      "top_pair": "docker;kubernetes",
+      "top_triple": "docker;kubernetes;linux",
+      "top_demand_skill": "victoriametrics",
+      "top_demand_index": 4.02
+    },
+    {
+      "region": "Новосибирск",
+      "n_total": 160,
+      "n_with_skills": 123,
+      "n_with_salary": 48,
+      "pct_with_salary": 30.0,
+      "median_salary_rub": 172000,
+      "p25_rub": 73725,
+      "p75_rub": 315000,
+      "mean_n_skills": 9.2,
+      "top_skill": "linux",
+      "top_pair": "docker;kubernetes",
+      "top_triple": "docker;kubernetes;linux",
+      "top_demand_skill": "tcp/ip",
+      "top_demand_index": 2.46
+    }
+  ],
+  "remote_overview": {
+    "region": "Удалённая работа",
+    "n_total": 1762,
+    "n_with_skills": 1282,
+    "n_with_salary": 427,
+    "pct_with_salary": 24.2,
+    "median_salary_rub": 250000,
+    "p25_rub": 200000,
+    "p75_rub": 325000,
+    "mean_n_skills": 8.76,
+    "top_skill": "kubernetes",
+    "top_pair": "docker;kubernetes",
+    "top_triple": "docker;kubernetes;linux",
+    "top_demand_skill": "circleci",
+    "top_demand_index": 2.76
+  }
+}

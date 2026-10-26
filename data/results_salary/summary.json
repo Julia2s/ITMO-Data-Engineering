@@ -1,0 +1,34 @@
+{
+  "overall_median": 210000,
+  "overall_n": 787,
+  "overall_median_all_salary": 215000,
+  "overall_n_all_salary": 1110,
+  "n_pairs_total": 582,
+  "n_triples_total": 2880,
+  "single_skills_count": 645,
+  "stats": {
+    "rows_matched": 5158,
+    "rows_with_skills": 3534,
+    "rows_with_convertible_salary": 1110,
+    "rows_with_skills_and_salary": 787,
+    "currencies_seen": {
+      "RUR": 1037,
+      "USD": 53,
+      "EUR": 20,
+      "BYR": 1
+    },
+    "filter_mode": "role",
+    "reader": {
+      "lines_total": 229389,
+      "rows_parsed": 229387,
+      "skipped_blank": 1,
+      "skipped_malformed": 1,
+      "skipped_header": 0
+    }
+  },
+  "thresholds": {
+    "min_vac_pair": 10,
+    "min_vac_triple": 8,
+    "min_vac_base": 15
+  }
+}

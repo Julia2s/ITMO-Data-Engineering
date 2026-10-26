@@ -1,0 +1,6 @@
+combo,freq,pct
+docker;kubernetes,175,35.9
+docker;linux,174,35.7
+kubernetes;linux,153,31.4
+ansible;docker,140,28.7
+ansible;linux,137,28.1

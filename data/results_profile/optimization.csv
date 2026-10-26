@@ -1,0 +1,7 @@
+method,label,run_id,wall_seconds,peak_mib,samples,exit_code
+optimized,MapReduce v2 (curated CSV),1,2.133,113.01,70,0
+original,MapReduce v2 (raw CSV),1,12.916,133.05,399,0
+original,MapReduce v2 (raw CSV),2,13.314,130.33,403,0
+optimized,MapReduce v2 (curated CSV),2,2.175,113.35,73,0
+optimized,MapReduce v2 (curated CSV),3,2.055,114.4,68,0
+original,MapReduce v2 (raw CSV),3,13.162,132.48,401,0

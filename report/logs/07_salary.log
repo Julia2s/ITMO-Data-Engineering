@@ -1,0 +1,52 @@
+overall_median: 210000 ₽ (787 vacancies with skills+salary)
+all salary rows (incl. no skills): 1110, median 215000 ₽
+n_pairs_total: 582, n_triples_total: 2880
+audit stats: {"rows_matched": 5158, "rows_with_skills": 3534, "rows_with_convertible_salary": 1110, "rows_with_skills_and_salary": 787, "currencies_seen": {"RUR": 1037, "USD": 53, "EUR": 20, "BYR": 1}, "filter_mode": "role", "reader": {"lines_total": 229389, "rows_parsed": 229387, "skipped_blank": 1, "skipped_malformed": 1, "skipped_header": 0}}
+
+=== TOP-10 PAIRS RAISE ===
+   +133925 ₽ ( +61.9%)  devops;sre                                     med=350175 (n=12)  base devops=216250 (n=348)
+   +112925 ₽ ( +47.6%)  grafana;openshift                              med=350000 (n=12)  base grafana=237075 (n=224)
+   +112250 ₽ ( +52.2%)  bash;мониторинг                                med=327250 (n=10)  base bash=215000 (n=219)
+   +105000 ₽ ( +48.3%)  docker;openshift                               med=322500 (n=12)  base docker=217500 (n=462)
+   +104500 ₽ ( +52.2%)  linux;openshift                                med=304500 (n=13)  base linux=200000 (n=478)
+   +104250 ₽ ( +53.3%)  git;gitlab ci                                  med=300000 (n=19)  base git=195750 (n=196)
+   +101375 ₽ ( +47.2%)  bash;субд                                      med=316375 (n=10)  base bash=215000 (n=219)
+   +100625 ₽ ( +44.7%)  ci/cd;helm                                     med=325625 (n=12)  base ci/cd=225000 (n=223)
+   +100000 ₽ ( +50.0%)  terraform;zabbix                               med=300000 (n=38)  base zabbix=200000 (n=138)
+   +100000 ₽ ( +50.0%)  kafka;zabbix                                   med=300000 (n=13)  base zabbix=200000 (n=138)
+
+=== TOP-10 PAIRS LOWER ===
+   -137500 ₽ ( -55.0%)  ansible;администрирование                      med=112500 (n=11)  base ansible=250000 (n=267)
+   -125000 ₽ ( -50.0%)  atlassian jira;prometheus                      med=125000 (n=10)  base prometheus=250000 (n=180)
+   -110000 ₽ ( -44.0%)  ansible;debian                                 med=140000 (n=11)  base ansible=250000 (n=267)
+   -108750 ₽ ( -45.5%)  debian;postgresql                              med=130500 (n=11)  base postgresql=239250 (n=245)
+   -100000 ₽ ( -50.0%)  debian;linux                                   med=100000 (n=19)  base linux=200000 (n=478)
+   -100000 ₽ ( -50.0%)  debian;nginx                                   med=100000 (n=12)  base nginx=200000 (n=192)
+   -100000 ₽ ( -50.0%)  apache http server;администрирование серверов linux  med=100000 (n=11)  base администрирование серверов linux=200000 (n=121)
+   -100000 ₽ ( -50.0%)  debian;администрирование серверов linux        med=100000 (n=10)  base администрирование серверов linux=200000 (n=121)
+    -97075 ₽ ( -40.9%)  docker-compose;grafana                         med=140000 (n=10)  base grafana=237075 (n=224)
+    -95000 ₽ ( -38.0%)  ansible;atlassian jira                         med=155000 (n=12)  base ansible=250000 (n=267)
+
+=== TOP-10 TRIPLES RAISE ===
+   +180000 ₽ (+100.0%)  git;gitlab ci;python                           med=360000 (n=9)  base git;python=180000 (n=76)
+   +160000 ₽ ( +80.0%)  git;gitlab ci;postgresql                       med=360000 (n=11)  base git;postgresql=200000 (n=84)
+   +151200 ₽ ( +72.4%)  gitlab ci;linux;python                         med=360000 (n=9)  base linux;python=208800 (n=151)
+   +150625 ₽ ( +60.2%)  grafana;helm;terraform                         med=400625 (n=8)  base grafana;terraform=250000 (n=72)
+   +150000 ₽ ( +75.0%)  ci/cd;python;zabbix                            med=350000 (n=17)  base ci/cd;python=200000 (n=69)
+   +150000 ₽ ( +75.0%)  ci/cd;elk;python                               med=350000 (n=15)  base ci/cd;python=200000 (n=69)
+   +150000 ₽ ( +75.0%)  ci/cd;git;jenkins                              med=350000 (n=13)  base ci/cd;git=200000 (n=75)
+   +150000 ₽ ( +75.0%)  git;gitlab;jenkins                             med=350000 (n=11)  base git;gitlab=200000 (n=46)
+   +150000 ₽ ( +75.0%)  bash;python;субд                               med=350000 (n=8)  base bash;python=200000 (n=124)
+   +150000 ₽ ( +75.0%)  ci/cd;python;удаленная работа                  med=350000 (n=8)  base ci/cd;python=200000 (n=69)
+
+=== TOP-10 TRIPLES LOWER ===
+   -145000 ₽ ( -59.2%)  docker-compose;linux;prometheus                med=100000 (n=9)  base linux;prometheus=245000 (n=132)
+   -132125 ₽ ( -56.9%)  jenkins;postgresql;sql                         med=100000 (n=9)  base jenkins;postgresql=232125 (n=38)
+   -125000 ₽ ( -50.0%)  elk;prometheus;администрирование серверов linux  med=125000 (n=19)  base elk;prometheus=250000 (n=64)
+   -125000 ₽ ( -50.0%)  ansible;atlassian jira;linux                   med=125000 (n=10)  base ansible;linux=250000 (n=190)
+   -125000 ₽ ( -50.0%)  ansible;atlassian jira;prometheus              med=125000 (n=10)  base ansible;prometheus=250000 (n=114)
+   -125000 ₽ ( -50.0%)  kubernetes;postgresql;субд                     med=125000 (n=9)  base kubernetes;postgresql=250000 (n=137)
+   -125000 ₽ ( -50.0%)  postgresql;prometheus;английский язык          med=125000 (n=9)  base postgresql;prometheus=250000 (n=74)
+   -125000 ₽ ( -50.0%)  atlassian jira;devops;prometheus               med=125000 (n=8)  base devops;prometheus=250000 (n=100)
+   -122250 ₽ ( -48.9%)  ansible;python;английский язык                 med=127750 (n=10)  base ansible;python=250000 (n=90)
+   -120000 ₽ ( -49.0%)  atlassian jira;linux;prometheus                med=125000 (n=10)  base linux;prometheus=245000 (n=132)

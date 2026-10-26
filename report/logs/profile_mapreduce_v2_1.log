@@ -1,0 +1,76 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
+exit_code=0
+
+--- stdout ---
+{
+  "file_size_bytes": 847619384,
+  "filter_mode": "role",
+  "chunk_size_bytes": 8388608,
+  "n_chunks": 102,
+  "lines_total": 229389,
+  "lines_prefiltered": 5784,
+  "rows_matched": 5158,
+  "rows_with_skills": 3534,
+  "lines_malformed": 0,
+  "events_per_k": {
+    "1": 28336,
+    "2": 134651,
+    "3": 506549
+  },
+  "n_skills_1": 1401,
+  "n_skills_2": 20454,
+  "n_skills_3": 144024,
+  "total_frequency": {
+    "1": 28336,
+    "2": 134651,
+    "3": 506549
+  },
+  "phase_time_stat_s": 0.005,
+  "phase_time_map_s": 11.585,
+  "phase_time_reduce_write_s": 0.733,
+  "phase_time_total_s": 12.323,
+  "results": {
+    "1": {
+      "n_combinations": 1401,
+      "total_frequency": 28336,
+      "top": [
+        [
+          "linux"
+        ],
+        2190
+      ],
+      "s3_key": "results/mapreduce_v2/skills_1.csv",
+      "local_path": "data/results_v2\\skills_1.csv"
+    },
+    "2": {
+      "n_combinations": 20454,
+      "total_frequency": 134651,
+      "top": [
+        [
+          "docker",
+          "kubernetes"
+        ],
+        1251
+      ],
+      "s3_key": "results/mapreduce_v2/skills_2.csv",
+      "local_path": "data/results_v2\\skills_2.csv"
+    },
+    "3": {
+      "n_combinations": 144024,
+      "total_frequency": 506549,
+      "top": [
+        [
+          "docker",
+          "kubernetes",
+          "linux"
+        ],
+        804
+      ],
+      "s3_key": "results/mapreduce_v2/skills_3.csv",
+      "local_path": "data/results_v2\\skills_3.csv"
+    }
+  },
+  "manifest": "data/manifests\\mapreduce_v2.json"
+}
+
+--- stderr ---

@@ -1,0 +1,11 @@
+combo,combo_median,combo_n,base,base_median,base_n,delta_rub,delta_pct
+git;gitlab ci;python,360000,9,git;python,180000,76,180000,100.0
+git;gitlab ci;postgresql,360000,11,git;postgresql,200000,84,160000,80.0
+gitlab ci;linux;python,360000,9,linux;python,208800,151,151200,72.4
+grafana;helm;terraform,400625,8,grafana;terraform,250000,72,150625,60.2
+ci/cd;python;zabbix,350000,17,ci/cd;python,200000,69,150000,75.0
+ci/cd;elk;python,350000,15,ci/cd;python,200000,69,150000,75.0
+ci/cd;git;jenkins,350000,13,ci/cd;git,200000,75,150000,75.0
+git;gitlab;jenkins,350000,11,git;gitlab,200000,46,150000,75.0
+bash;python;субд,350000,8,bash;python,200000,124,150000,75.0
+ci/cd;python;удаленная работа,350000,8,ci/cd;python,200000,69,150000,75.0

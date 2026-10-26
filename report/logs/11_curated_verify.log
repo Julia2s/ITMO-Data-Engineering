@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "filter_mode": "role",
+  "full_devops_rows": 3534,
+  "curated_rows": 3534,
+  "matching_rows": 3534,
+  "mismatches": 0,
+  "missing_in_curated": 0,
+  "ok": true
+}

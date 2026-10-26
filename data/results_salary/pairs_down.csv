@@ -1,0 +1,11 @@
+combo,combo_median,combo_n,base,base_median,base_n,delta_rub,delta_pct
+ansible;администрирование,112500,11,ansible,250000,267,-137500,-55.0
+atlassian jira;prometheus,125000,10,prometheus,250000,180,-125000,-50.0
+ansible;debian,140000,11,ansible,250000,267,-110000,-44.0
+debian;postgresql,130500,11,postgresql,239250,245,-108750,-45.5
+debian;linux,100000,19,linux,200000,478,-100000,-50.0
+debian;nginx,100000,12,nginx,200000,192,-100000,-50.0
+apache http server;администрирование серверов linux,100000,11,администрирование серверов linux,200000,121,-100000,-50.0
+debian;администрирование серверов linux,100000,10,администрирование серверов linux,200000,121,-100000,-50.0
+docker-compose;grafana,140000,10,grafana,237075,224,-97075,-40.9
+ansible;atlassian jira,155000,12,ansible,250000,267,-95000,-38.0

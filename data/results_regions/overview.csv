@@ -1,0 +1,4 @@
+region,n_total,n_with_skills,n_with_salary,pct_with_salary,median_salary_rub,p25_rub,p75_rub,mean_n_skills,top_skill,top_pair,top_triple,top_demand_skill,top_demand_index
+Москва,3007,2015,573,19.1,250000,195750,340000,7.65,linux,docker;kubernetes,docker;kubernetes;linux,yandex.cloud,1.75
+Санкт-Петербург,686,488,161,23.5,210000,153000,275000,8.34,linux,docker;kubernetes,docker;kubernetes;linux,victoriametrics,4.02
+Новосибирск,160,123,48,30.0,172000,73725,315000,9.2,linux,docker;kubernetes,docker;kubernetes;linux,tcp/ip,2.46

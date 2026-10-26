@@ -1,0 +1,60 @@
+{
+  "csv_path": "s3://hh-lake/raw/vacancies.csv",
+  "filter_mode": "role",
+  "rows_matched": 5158,
+  "rows_with_skills": 3534,
+  "n_skills_1": 1401,
+  "n_skills_2": 20454,
+  "n_skills_3": 144024,
+  "total_frequency": {
+    "1": 28336,
+    "2": 134651,
+    "3": 506549
+  },
+  "duckdb_version": "2.0.0",
+  "phase_time_query_s": 8.927,
+  "phase_time_write_s": 1.3,
+  "phase_time_total_s": 10.227,
+  "results": {
+    "1": {
+      "n_combinations": 1401,
+      "total_frequency": 28336,
+      "top": [
+        [
+          "linux"
+        ],
+        2190
+      ],
+      "s3_key": "results/duckdb/skills_1.csv",
+      "local_path": "data/results_duckdb\\skills_1.csv"
+    },
+    "2": {
+      "n_combinations": 20454,
+      "total_frequency": 134651,
+      "top": [
+        [
+          "docker",
+          "kubernetes"
+        ],
+        1251
+      ],
+      "s3_key": "results/duckdb/skills_2.csv",
+      "local_path": "data/results_duckdb\\skills_2.csv"
+    },
+    "3": {
+      "n_combinations": 144024,
+      "total_frequency": 506549,
+      "top": [
+        [
+          "docker",
+          "kubernetes",
+          "linux"
+        ],
+        804
+      ],
+      "s3_key": "results/duckdb/skills_3.csv",
+      "local_path": "data/results_duckdb\\skills_3.csv"
+    }
+  },
+  "manifest": "data/manifests\\duckdb.json"
+}

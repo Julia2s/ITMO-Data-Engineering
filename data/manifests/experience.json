@@ -1,0 +1,72 @@
+{
+  "tool": "experience",
+  "generated_at": "2026-10-26T08:21:45+00:00",
+  "variant_role": "DevOps-инженер",
+  "filter_mode": "role",
+  "environment": {
+    "python": "3.14.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 16
+  },
+  "input": {
+    "backend": "boto3",
+    "endpoint": "http://localhost:9010",
+    "bucket": "hh-lake",
+    "key": "raw/vacancies.csv",
+    "exists": true,
+    "size_bytes": 847619384,
+    "etag": "efb65458995932747001aa004592d19c-102",
+    "last_modified": "2026-10-26 08:17:32+00:00"
+  },
+  "results": {},
+  "summary": [
+    {
+      "experience": "Нет опыта",
+      "n_vacancies": 71,
+      "n_with_skills": 35,
+      "median_salary_rub": 69600,
+      "p25_rub": 43500,
+      "p75_rub": 177000,
+      "mean_n_skills": 7.77
+    },
+    {
+      "experience": "От 1 года до 3 лет",
+      "n_vacancies": 402,
+      "n_with_skills": 270,
+      "median_salary_rub": 152250,
+      "p25_rub": 104400,
+      "p75_rub": 200075,
+      "mean_n_skills": 9.39
+    },
+    {
+      "experience": "От 3 до 6 лет",
+      "n_vacancies": 566,
+      "n_with_skills": 426,
+      "median_salary_rub": 250000,
+      "p25_rub": 200000,
+      "p75_rub": 326250,
+      "mean_n_skills": 8.87
+    },
+    {
+      "experience": "Более 6 лет",
+      "n_vacancies": 71,
+      "n_with_skills": 56,
+      "median_salary_rub": 304500,
+      "p25_rub": 275000,
+      "p75_rub": 402500,
+      "mean_n_skills": 8.27
+    }
+  ],
+  "stats": {
+    "rows_matched": 5158,
+    "rows_with_convertible_salary": 1110,
+    "filter_mode": "role",
+    "reader": {
+      "lines_total": 229389,
+      "rows_parsed": 229387,
+      "skipped_blank": 1,
+      "skipped_malformed": 1,
+      "skipped_header": 0
+    }
+  }
+}

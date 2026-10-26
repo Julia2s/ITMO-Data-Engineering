@@ -1,0 +1,6 @@
+combo,freq,pct
+docker;kubernetes;linux,44,35.8
+ansible;docker;kubernetes,29,23.6
+ansible;docker;linux,27,22.0
+devops;docker;linux,27,22.0
+grafana;kubernetes;linux,27,22.0

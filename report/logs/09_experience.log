@@ -1,0 +1,40 @@
+DevOps вакансий с зарплатой: 1110
+{"rows_matched": 5158, "rows_with_convertible_salary": 1110, "filter_mode": "role", "reader": {"lines_total": 229389, "rows_parsed": 229387, "skipped_blank": 1, "skipped_malformed": 1, "skipped_header": 0}}
+
+=== Зарплата по грейдам (опыт) ===
+Опыт                           N     Медиана         P25         P75  #нав
+---------------------------------------------------------------------------
+Нет опыта                     71      69600₽      43500₽     177000₽  7.77
+От 1 года до 3 лет           402     152250₽     104400₽     200075₽  9.39
+От 3 до 6 лет                566     250000₽     200000₽     326250₽  8.87
+Более 6 лет                   71     304500₽     275000₽     402500₽  8.27
+
+=== Топ-5 навыков по грейдам ===
+
+[Нет опыта]
+  linux                             23
+  docker                            15
+  kubernetes                        14
+  devops                             8
+  nginx                              7
+
+[От 1 года до 3 лет]
+  linux                            172
+  docker                           163
+  kubernetes                       116
+  devops                           113
+  python                            94
+
+[От 3 до 6 лет]
+  docker                           256
+  linux                            252
+  kubernetes                       231
+  devops                           205
+  ansible                          157
+
+[Более 6 лет]
+  kubernetes                        32
+  linux                             31
+  docker                            28
+  devops                            22
+  ansible                           20

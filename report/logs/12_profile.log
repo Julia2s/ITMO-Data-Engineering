@@ -1,0 +1,60 @@
+=== Warmup: each method once (excluded from report) ===
+
+--- MapReduce v1 (naive) (run 0) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v1.py
+   warmup mapreduce_v1: wall=13.476s, peak=195.25 MiB, exit=0
+
+--- MapReduce v2 (optimized) (run 0) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
+   warmup mapreduce_v2: wall=12.781s, peak=137.82 MiB, exit=0
+
+--- DuckDB SQL (run 0) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\duckdb_skills.py
+   warmup duckdb: wall=9.749s, peak=1718.95 MiB, exit=0
+
+=== Profiling: 3 rounds × 3 methods (interleaved) ===
+
+--- MapReduce v2 (optimized) (run 1) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
+    -> MapReduce v2 (optimized)            run 1: wall=13.692s  peak= 132.40 MiB  exit=0
+
+--- DuckDB SQL (run 1) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\duckdb_skills.py
+    -> DuckDB SQL                          run 1: wall= 9.317s  peak=1723.26 MiB  exit=0
+
+--- MapReduce v1 (naive) (run 1) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v1.py
+    -> MapReduce v1 (naive)                run 1: wall=13.373s  peak= 196.33 MiB  exit=0
+
+--- DuckDB SQL (run 2) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\duckdb_skills.py
+    -> DuckDB SQL                          run 2: wall= 7.549s  peak=1418.50 MiB  exit=0
+
+--- MapReduce v1 (naive) (run 2) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v1.py
+    -> MapReduce v1 (naive)                run 2: wall=13.310s  peak= 204.02 MiB  exit=0
+
+--- MapReduce v2 (optimized) (run 2) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
+    -> MapReduce v2 (optimized)            run 2: wall=12.552s  peak= 127.25 MiB  exit=0
+
+--- MapReduce v1 (naive) (run 3) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v1.py
+    -> MapReduce v1 (naive)                run 3: wall=12.698s  peak= 195.91 MiB  exit=0
+
+--- MapReduce v2 (optimized) (run 3) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
+    -> MapReduce v2 (optimized)            run 3: wall=12.985s  peak= 132.97 MiB  exit=0
+
+--- DuckDB SQL (run 3) ---
+    cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\duckdb_skills.py
+    -> DuckDB SQL                          run 3: wall= 8.515s  peak=1418.37 MiB  exit=0
+
+=== Profile Summary ===
+Method                              n_ok   wall_med_s   wall_min_s   wall_max_s   peak_med_MiB   peak_max_MiB
+--------------------------------------------------------------------------------------------------------------
+MapReduce v1 (naive)                  3/3       13.310       12.698       13.373         196.33         204.02
+MapReduce v2 (optimized)              3/3       12.985       12.552       13.692         132.40         132.97
+DuckDB SQL                            3/3        8.515        7.549        9.317        1418.50        1723.26
+
+Environment: {'python': '3.14.5', 'platform': 'win32', 'cpu_count': 16, 'total_memory_gib': 15.34, 'available_memory_gib_at_end': 1.6}

@@ -1,0 +1,21 @@
+=== Verification summary ===
+all_match: True
+
+stack  left     right       rows_a    rows_b     sum_a     sum_b  match
+---------------------------------------------------------------------------
+1      v1       v2            1401      1401     28336     28336  True
+1      v1       duckdb        1401      1401     28336     28336  True
+1      v2       duckdb        1401      1401     28336     28336  True
+2      v1       v2           20454     20454    134651    134651  True
+2      v1       duckdb       20454     20454    134651    134651  True
+2      v2       duckdb       20454     20454    134651    134651  True
+3      v1       v2          144024    144024    506549    506549  True
+3      v1       duckdb      144024    144024    506549    506549  True
+3      v2       duckdb      144024    144024    506549    506549  True
+
+=== Manifest checks ===
+filter modes: ['role']
+rows matched: {'v1': 5158, 'v2': 5158, 'duckdb': 5158}
+  ✓ manifests consistent
+
+✓ ВСЕ РЕЗУЛЬТАТЫ СОВПАЛИ (v1 == v2 == duckdb)

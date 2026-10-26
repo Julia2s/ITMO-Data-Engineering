@@ -1,0 +1,198 @@
+{
+  "n_runs_per_method": 3,
+  "sampling_interval_s": 0.02,
+  "results": [
+    {
+      "method": "mapreduce_v2",
+      "label": "MapReduce v2 (optimized)",
+      "run_id": 1,
+      "wall_seconds": 13.692,
+      "peak_mib": 132.4,
+      "samples": 416,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1586,
+      "log_path": "report/logs/profile_mapreduce_v2_1.log"
+    },
+    {
+      "method": "duckdb",
+      "label": "DuckDB SQL",
+      "run_id": 1,
+      "wall_seconds": 9.317,
+      "peak_mib": 1723.26,
+      "samples": 222,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1370,
+      "log_path": "report/logs/profile_duckdb_1.log"
+    },
+    {
+      "method": "mapreduce_v1",
+      "label": "MapReduce v1 (naive)",
+      "run_id": 1,
+      "wall_seconds": 13.373,
+      "peak_mib": 196.33,
+      "samples": 408,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1635,
+      "log_path": "report/logs/profile_mapreduce_v1_1.log"
+    },
+    {
+      "method": "duckdb",
+      "label": "DuckDB SQL",
+      "run_id": 2,
+      "wall_seconds": 7.549,
+      "peak_mib": 1418.5,
+      "samples": 176,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1370,
+      "log_path": "report/logs/profile_duckdb_2.log"
+    },
+    {
+      "method": "mapreduce_v1",
+      "label": "MapReduce v1 (naive)",
+      "run_id": 2,
+      "wall_seconds": 13.31,
+      "peak_mib": 204.02,
+      "samples": 407,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1635,
+      "log_path": "report/logs/profile_mapreduce_v1_2.log"
+    },
+    {
+      "method": "mapreduce_v2",
+      "label": "MapReduce v2 (optimized)",
+      "run_id": 2,
+      "wall_seconds": 12.552,
+      "peak_mib": 127.25,
+      "samples": 392,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1586,
+      "log_path": "report/logs/profile_mapreduce_v2_2.log"
+    },
+    {
+      "method": "mapreduce_v1",
+      "label": "MapReduce v1 (naive)",
+      "run_id": 3,
+      "wall_seconds": 12.698,
+      "peak_mib": 195.91,
+      "samples": 399,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1635,
+      "log_path": "report/logs/profile_mapreduce_v1_3.log"
+    },
+    {
+      "method": "mapreduce_v2",
+      "label": "MapReduce v2 (optimized)",
+      "run_id": 3,
+      "wall_seconds": 12.985,
+      "peak_mib": 132.97,
+      "samples": 403,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1585,
+      "log_path": "report/logs/profile_mapreduce_v2_3.log"
+    },
+    {
+      "method": "duckdb",
+      "label": "DuckDB SQL",
+      "run_id": 3,
+      "wall_seconds": 8.515,
+      "peak_mib": 1418.37,
+      "samples": 182,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1370,
+      "log_path": "report/logs/profile_duckdb_3.log"
+    }
+  ],
+  "summary": [
+    {
+      "method": "mapreduce_v1",
+      "label": "MapReduce v1 (naive)",
+      "n_runs": 3,
+      "n_ok": 3,
+      "wall_median_s": 13.31,
+      "wall_min_s": 12.698,
+      "wall_max_s": 13.373,
+      "peak_median_mib": 196.33,
+      "peak_min_mib": 195.91,
+      "peak_max_mib": 204.02
+    },
+    {
+      "method": "mapreduce_v2",
+      "label": "MapReduce v2 (optimized)",
+      "n_runs": 3,
+      "n_ok": 3,
+      "wall_median_s": 12.985,
+      "wall_min_s": 12.552,
+      "wall_max_s": 13.692,
+      "peak_median_mib": 132.4,
+      "peak_min_mib": 127.25,
+      "peak_max_mib": 132.97
+    },
+    {
+      "method": "duckdb",
+      "label": "DuckDB SQL",
+      "n_runs": 3,
+      "n_ok": 3,
+      "wall_median_s": 8.515,
+      "wall_min_s": 7.549,
+      "wall_max_s": 9.317,
+      "peak_median_mib": 1418.5,
+      "peak_min_mib": 1418.37,
+      "peak_max_mib": 1723.26
+    }
+  ],
+  "warmups": [
+    {
+      "method": "mapreduce_v1",
+      "label": "MapReduce v1 (naive)",
+      "run_id": 0,
+      "wall_seconds": 13.476,
+      "peak_mib": 195.25,
+      "samples": 423,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1635,
+      "log_path": "report/logs/profile_mapreduce_v1_0.log"
+    },
+    {
+      "method": "mapreduce_v2",
+      "label": "MapReduce v2 (optimized)",
+      "run_id": 0,
+      "wall_seconds": 12.781,
+      "peak_mib": 137.82,
+      "samples": 396,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1585,
+      "log_path": "report/logs/profile_mapreduce_v2_0.log"
+    },
+    {
+      "method": "duckdb",
+      "label": "DuckDB SQL",
+      "run_id": 0,
+      "wall_seconds": 9.749,
+      "peak_mib": 1718.95,
+      "samples": 238,
+      "exit_code": 0,
+      "stderr_tail": "",
+      "stdout_bytes": 1370,
+      "log_path": "report/logs/profile_duckdb_0.log"
+    }
+  ],
+  "all_runs_ok": true,
+  "environment": {
+    "python": "3.14.5",
+    "platform": "win32",
+    "cpu_count": 16,
+    "total_memory_gib": 15.34,
+    "available_memory_gib_at_end": 1.6
+  }
+}

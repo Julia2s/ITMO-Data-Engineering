@@ -1,0 +1,3 @@
+method,label,n_runs,n_ok,wall_median_s,wall_min_s,wall_max_s,peak_median_mib,peak_min_mib,peak_max_mib
+original,MapReduce v2 (raw CSV),3,3,13.162,12.916,13.314,132.48,130.33,133.05
+optimized,MapReduce v2 (curated CSV),3,3,2.133,2.055,2.175,113.35,113.01,114.4

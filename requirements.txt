@@ -1,0 +1,6 @@
+boto3>=1.34
+duckdb>=1.0
+psutil>=5.9
+matplotlib>=3.7
+reportlab>=4.0
+pypdf>=4.0

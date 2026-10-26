@@ -1,0 +1,11 @@
+combo,combo_median,combo_n,base,base_median,base_n,delta_rub,delta_pct
+devops;sre,350175,12,devops,216250,348,133925,61.9
+grafana;openshift,350000,12,grafana,237075,224,112925,47.6
+bash;мониторинг,327250,10,bash,215000,219,112250,52.2
+docker;openshift,322500,12,docker,217500,462,105000,48.3
+linux;openshift,304500,13,linux,200000,478,104500,52.2
+git;gitlab ci,300000,19,git,195750,196,104250,53.3
+bash;субд,316375,10,bash,215000,219,101375,47.2
+ci/cd;helm,325625,12,ci/cd,225000,223,100625,44.7
+terraform;zabbix,300000,38,zabbix,200000,138,100000,50.0
+kafka;zabbix,300000,13,zabbix,200000,138,100000,50.0

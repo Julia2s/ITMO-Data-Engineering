@@ -1,0 +1,56 @@
+{
+  "tool": "salary",
+  "generated_at": "2026-10-26T08:20:22+00:00",
+  "variant_role": "DevOps-инженер",
+  "filter_mode": "role",
+  "environment": {
+    "python": "3.14.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 16
+  },
+  "input": {
+    "backend": "boto3",
+    "endpoint": "http://localhost:9010",
+    "bucket": "hh-lake",
+    "key": "raw/vacancies.csv",
+    "exists": true,
+    "size_bytes": 847619384,
+    "etag": "efb65458995932747001aa004592d19c-102",
+    "last_modified": "2026-10-26 08:17:32+00:00"
+  },
+  "results": {},
+  "summary": {
+    "overall_median": 210000,
+    "overall_n": 787,
+    "overall_median_all_salary": 215000,
+    "overall_n_all_salary": 1110,
+    "n_pairs_total": 582,
+    "n_triples_total": 2880,
+    "single_skills_count": 645,
+    "stats": {
+      "rows_matched": 5158,
+      "rows_with_skills": 3534,
+      "rows_with_convertible_salary": 1110,
+      "rows_with_skills_and_salary": 787,
+      "currencies_seen": {
+        "RUR": 1037,
+        "USD": 53,
+        "EUR": 20,
+        "BYR": 1
+      },
+      "filter_mode": "role",
+      "reader": {
+        "lines_total": 229389,
+        "rows_parsed": 229387,
+        "skipped_blank": 1,
+        "skipped_malformed": 1,
+        "skipped_header": 0
+      }
+    },
+    "thresholds": {
+      "min_vac_pair": 10,
+      "min_vac_triple": 8,
+      "min_vac_base": 15
+    }
+  }
+}

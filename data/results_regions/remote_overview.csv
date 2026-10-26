@@ -1,0 +1,2 @@
+region,n_total,n_with_skills,n_with_salary,pct_with_salary,median_salary_rub,p25_rub,p75_rub,mean_n_skills,top_skill,top_pair,top_triple,top_demand_skill,top_demand_index
+Удалённая работа,1762,1282,427,24.2,250000,200000,325000,8.76,kubernetes,docker;kubernetes,docker;kubernetes;linux,circleci,2.76

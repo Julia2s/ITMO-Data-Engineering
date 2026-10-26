@@ -1,0 +1,31 @@
+skill,count
+linux,2190
+kubernetes,1862
+docker,1850
+devops,1319
+ansible,1252
+python,1058
+ci/cd,1044
+bash,925
+postgresql,892
+grafana,830
+git,733
+prometheus,668
+jenkins,662
+gitlab,628
+nginx,551
+terraform,482
+zabbix,480
+elk,437
+администрирование серверов linux,391
+sql,338
+kafka,328
+gitlab ci,248
+rabbitmq,213
+mysql,210
+helm,170
+redis,164
+aws,161
+teamcity,160
+java,148
+elasticsearch,143

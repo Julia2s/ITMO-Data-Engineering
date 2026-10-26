@@ -1,0 +1,6 @@
+combo,freq,pct
+docker;kubernetes,700,34.7
+kubernetes;linux,669,33.2
+docker;linux,643,31.9
+devops;kubernetes,497,24.7
+devops;linux,488,24.2

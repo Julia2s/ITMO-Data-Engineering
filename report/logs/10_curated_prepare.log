@@ -1,0 +1,21 @@
+{
+  "action": "prepare",
+  "rows": 3534,
+  "rows_matched": 5158,
+  "filter_mode": "role",
+  "reader": {
+    "lines_total": 229389,
+    "rows_parsed": 229387,
+    "skipped_blank": 1,
+    "skipped_malformed": 1,
+    "skipped_header": 0
+  },
+  "size_bytes": 322653,
+  "size_kib": 315.09,
+  "s3_key": "curated/devops_skills.csv",
+  "local_path": "data/curated_devops_skills.csv",
+  "phase_time_filter_s": 10.122,
+  "phase_time_put_s": 0.04,
+  "phase_time_total_s": 10.162,
+  "manifest": "data/manifests\\optimized_prepare.json"
+}

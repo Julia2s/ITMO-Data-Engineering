@@ -1,0 +1,11 @@
+combo,combo_median,combo_n,base,base_median,base_n,delta_rub,delta_pct
+docker-compose;linux;prometheus,100000,9,linux;prometheus,245000,132,-145000,-59.2
+jenkins;postgresql;sql,100000,9,jenkins;postgresql,232125,38,-132125,-56.9
+elk;prometheus;администрирование серверов linux,125000,19,elk;prometheus,250000,64,-125000,-50.0
+ansible;atlassian jira;linux,125000,10,ansible;linux,250000,190,-125000,-50.0
+ansible;atlassian jira;prometheus,125000,10,ansible;prometheus,250000,114,-125000,-50.0
+kubernetes;postgresql;субд,125000,9,kubernetes;postgresql,250000,137,-125000,-50.0
+postgresql;prometheus;английский язык,125000,9,postgresql;prometheus,250000,74,-125000,-50.0
+atlassian jira;devops;prometheus,125000,8,devops;prometheus,250000,100,-125000,-50.0
+ansible;python;английский язык,127750,10,ansible;python,250000,90,-122250,-48.9
+atlassian jira;linux;prometheus,125000,10,linux;prometheus,245000,132,-120000,-49.0

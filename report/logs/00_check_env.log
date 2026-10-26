@@ -1,0 +1,24 @@
+
+===================================================================================================
+ENVIRONMENT CHECK — HW3 DevOps pipeline
+===================================================================================================
+  [OK  ] Python >= 3.10                          3.14.5 (C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe)
+  [OK  ] package boto3                           1.43.116
+  [OK  ] package duckdb                          2.0.0
+  [OK  ] package psutil                          7.2.2
+  [OK  ] package matplotlib                      3.11.2
+  [OK  ] package reportlab                       5.0.1
+  [OK  ] package pypdf                           6.21.1
+  [OK  ] S3 endpoint http://localhost:9010       TCP localhost:9010 доступен
+  [OK  ] S3 client                               backend=boto3, bucket=hh-lake
+  [OK  ] object s3://hh-lake/raw/vacancies.csv   847,619,384 B (808.4 MiB), etag=efb65458995932747001aa004592d19c-102
+  [OK  ] object curated/devops_skills.csv        322,653 B (0.31 MiB)
+  [OK  ] dir report/logs                         есть
+  [OK  ] dir report/images                       есть
+  [OK  ] dir report/screenshots                  есть
+  [OK  ] dir data                                есть
+  [OK  ] docker compose                          hh-rustfs-home Up 31 minutes (healthy) | hh-s3cli Up 30 minutes
+---------------------------------------------------------------------------------------------------
+  OK: 16  WARN: 0  FAIL: 0
+
+  Окружение готово к запуску: python src/run_all.py
