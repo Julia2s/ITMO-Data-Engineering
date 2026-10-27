@@ -7,7 +7,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import get_s3_client, S3_BUCKET, VACANCIES_KEY, Boto3S3Client
 
-
 def upload_file(local_path: str, key: str = VACANCIES_KEY, chunk_mib: int = 8) -> dict:
     cli = get_s3_client()
     size = os.path.getsize(local_path)
@@ -48,12 +47,10 @@ def upload_file(local_path: str, key: str = VACANCIES_KEY, chunk_mib: int = 8) -
         "method": method,
     }
 
-
 def list_bucket() -> list[dict]:
     cli = get_s3_client()
     objs = cli.list_objects(prefix="")
     return [{"key": o.key, "size": o.size, "size_mib": round(o.size / 1024 / 1024, 2)} for o in objs]
-
 
 if __name__ == "__main__":
     import argparse

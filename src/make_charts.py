@@ -33,13 +33,11 @@ V2_DIR = Path("data/results_v2")
 EDA_DIR = Path("data/eda")
 EXPERIENCE_DIR = Path("data/results_experience")
 
-
 def _load_freq_csv(path: Path):
     with open(path, encoding="utf-8") as f:
         reader = csv.reader(f)
         next(reader, None)
         return [r for r in reader if r]
-
 
 def _read_dicts(path: Path) -> list[dict]:
     if not path.exists():
@@ -47,10 +45,8 @@ def _read_dicts(path: Path) -> list[dict]:
     with open(path, encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
-
 def _limit_labels(labels: list[str], width: int = 28) -> list[str]:
     return [label if len(label) <= width else label[: width - 1] + "…" for label in labels]
-
 
 def chart_growth_combinations() -> bool:
     sizes = [1, 2, 3]
@@ -96,7 +92,6 @@ def chart_growth_combinations() -> bool:
     plt.savefig(OUT_DIR / "01_growth.png", facecolor=C_BG)
     plt.close()
     return True
-
 
 def chart_profile() -> bool:
     rows = _read_dicts(DATA_DIR / "summary.csv")
@@ -159,7 +154,6 @@ def chart_profile() -> bool:
     plt.close()
     return True
 
-
 def chart_salary_pairs() -> bool:
     up = _read_dicts(SALARY_DIR / "pairs_up.csv")[:5]
     down = _read_dicts(SALARY_DIR / "pairs_down.csv")[:5]
@@ -193,7 +187,6 @@ def chart_salary_pairs() -> bool:
     plt.savefig(OUT_DIR / "03_salary_pairs.png", facecolor=C_BG)
     plt.close()
     return True
-
 
 def chart_regions() -> bool:
     rows = _read_dicts(REGIONS_DIR / "overview.csv")
@@ -244,7 +237,6 @@ def chart_regions() -> bool:
     plt.savefig(OUT_DIR / "04_regions.png", facecolor=C_BG)
     plt.close()
     return True
-
 
 def chart_optimization_speedup() -> bool:
     rows = _read_dicts(DATA_DIR / "optimization_summary.csv")
@@ -315,7 +307,6 @@ def chart_optimization_speedup() -> bool:
     plt.close()
     return True
 
-
 def chart_salary_histogram() -> bool:
     path = EDA_DIR / "salary_histogram.csv"
     if not path.exists():
@@ -341,7 +332,6 @@ def chart_salary_histogram() -> bool:
     plt.savefig(OUT_DIR / "06_salary_histogram.png", facecolor=C_BG)
     plt.close()
     return True
-
 
 def chart_skill_count_distribution() -> bool:
     path = EDA_DIR / "skills_count_distribution.csv"
@@ -369,7 +359,6 @@ def chart_skill_count_distribution() -> bool:
     plt.savefig(OUT_DIR / "07_skills_per_vacancy.png", facecolor=C_BG)
     plt.close()
     return True
-
 
 def chart_skill_freq_vs_salary() -> bool:
     candidate = SALARY_DIR / "single_skills.csv"
@@ -418,7 +407,6 @@ def chart_skill_freq_vs_salary() -> bool:
     plt.savefig(OUT_DIR / "08_freq_vs_salary.png", facecolor=C_BG)
     plt.close()
     return True
-
 
 def chart_experience_salary() -> bool:
     rows = _read_dicts(EXPERIENCE_DIR / "summary.csv")
@@ -469,7 +457,6 @@ def chart_experience_salary() -> bool:
     plt.close()
     return True
 
-
 def main() -> dict:
     charts = [
         ("01_growth", chart_growth_combinations),
@@ -486,7 +473,7 @@ def main() -> dict:
     for name, fn in charts:
         try:
             ok = fn()
-        except Exception as exc:  # a broken chart must not kill the report
+        except Exception as exc:
             print(f"  ! {name}: {type(exc).__name__}: {exc}")
             ok = False
         (generated if ok else skipped).append(name)
@@ -497,7 +484,6 @@ def main() -> dict:
     if skipped:
         print(f"Skipped (no data): {', '.join(skipped)}")
     return {"generated": generated, "skipped": skipped}
-
 
 if __name__ == "__main__":
     main()

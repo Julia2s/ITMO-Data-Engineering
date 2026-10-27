@@ -15,9 +15,6 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Iterable, Iterator
 
-# ---------------------------------------------------------------------------
-# Storage configuration. Defaults match compose.yaml (RustFS on port 9010).
-# ---------------------------------------------------------------------------
 S3_BACKEND      = os.environ.get("S3_BACKEND",      "boto3")
 S3_ENDPOINT     = os.environ.get("S3_ENDPOINT",     "http://localhost:9010")
 S3_ACCESS_KEY   = os.environ.get("S3_ACCESS_KEY",   "hhadmin")
@@ -42,9 +39,6 @@ VARIANT_NAME_KEYWORDS = (
     "эксплуатация",
 )
 
-# role       -> only role == VARIANT_ROLE (strict, default)
-# role_or_name -> role match OR name keyword match (wide, legacy behaviour)
-# name       -> only name keyword match (diagnostic)
 FILTER_MODES = ("role", "role_or_name", "name")
 VARIANT_FILTER_MODE = os.environ.get("VARIANT_FILTER_MODE", "role").strip().lower()
 if VARIANT_FILTER_MODE not in FILTER_MODES:
@@ -64,21 +58,13 @@ CURRENCY_TO_RUB = {
     "USD": 90.0, "EUR": 100.0,
     "KZT": 0.19,
 }
-# BYR (old Belarusian ruble) is deliberately not converted: 1 record in the
-# dataset and the rate is ambiguous. It is reported as "unconvertible".
 
-
-# ---------------------------------------------------------------------------
-# Variant filter
-# ---------------------------------------------------------------------------
 def is_devops_role(row: dict) -> bool:
     return (row.get("role") or "").strip() == VARIANT_ROLE
-
 
 def is_devops_name(row: dict) -> bool:
     name = (row.get("name") or "").lower()
     return any(kw in name for kw in VARIANT_NAME_KEYWORDS)
-
 
 def matches_variant(row: dict, mode: str | None = None) -> bool:
     mode = mode or VARIANT_FILTER_MODE
@@ -91,7 +77,6 @@ def matches_variant(row: dict, mode: str | None = None) -> bool:
         return role or is_devops_name(row)
     raise ValueError(f"unknown filter mode {mode!r}")
 
-
 def is_devops(row: dict, fallback_to_name: bool | None = None) -> bool:
     """Backwards-compatible wrapper.
 
@@ -103,20 +88,15 @@ def is_devops(row: dict, fallback_to_name: bool | None = None) -> bool:
         return matches_variant(row)
     return is_devops_role(row) or (fallback_to_name and is_devops_name(row))
 
-
 def detect_filter_mode(rows_sample: list[dict]) -> str:
     if not rows_sample:
         return "none"
-    if any(is_devops_role(r) for r in rows_sample):
+    if next((r for r in rows_sample if is_devops_role(r)), None) is not None:
         return "role"
-    if any(is_devops_name(r) for r in rows_sample):
+    if next((r for r in rows_sample if is_devops_name(r)), None) is not None:
         return "name"
     return "none"
 
-
-# ---------------------------------------------------------------------------
-# Field parsing
-# ---------------------------------------------------------------------------
 def parse_skills(raw_field: str, sep: str = ";") -> list[str]:
     if not raw_field:
         return []
@@ -129,7 +109,6 @@ def parse_skills(raw_field: str, sep: str = ";") -> list[str]:
         seen.add(s)
         out.append(s)
     return out
-
 
 def salary_to_rub(row: dict) -> float | None:
     """Normalise salary_from/salary_to to a monthly RUB gross->net estimate.
@@ -169,14 +148,9 @@ def salary_to_rub(row: dict) -> float | None:
         rub *= 0.87
     return rub
 
-
 def date_utc() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
-
-# ---------------------------------------------------------------------------
-# Tolerant, streaming CSV reader
-# ---------------------------------------------------------------------------
 @dataclass
 class ReadStats:
     lines_total: int = 0
@@ -193,7 +167,6 @@ class ReadStats:
             "skipped_malformed": self.skipped_malformed,
             "skipped_header": self.skipped_header,
         }
-
 
 def iter_object_lines(
     cli: "S3Client",
@@ -235,7 +208,6 @@ def iter_object_lines(
     if buf:
         yield buf.rstrip("\r")
 
-
 def parse_vacancy_line(line: str) -> tuple[dict | None, str | None]:
     """Parse one physical CSV line into a 23-field dict.
 
@@ -253,7 +225,6 @@ def parse_vacancy_line(line: str) -> tuple[dict | None, str | None]:
     if cells[0].strip().lower() == "source" or cells[11].strip().lower() == "role":
         return None, "header"
     return dict(zip(VACANCY_FIELDS, cells)), None
-
 
 def iter_vacancy_rows(
     cli: "S3Client",
@@ -279,7 +250,6 @@ def iter_vacancy_rows(
             stats.rows_parsed += 1
         yield row
 
-
 def iter_variant_rows(
     cli: "S3Client",
     stats: ReadStats | None = None,
@@ -289,17 +259,12 @@ def iter_variant_rows(
         if matches_variant(row, mode):
             yield row
 
-
-# ---------------------------------------------------------------------------
-# S3 clients
-# ---------------------------------------------------------------------------
 @dataclass
 class S3ObjectInfo:
     key: str
     size: int
     etag: str | None = None
     last_modified: str | None = None
-
 
 class S3Client:
     def put_object(self, key: str, data: bytes, content_type: str = "application/octet-stream") -> None:
@@ -313,7 +278,6 @@ class S3Client:
 
     def list_objects(self, prefix: str = "") -> list[S3ObjectInfo]:
         raise NotImplementedError
-
 
 class Boto3S3Client(S3Client):
     def __init__(self) -> None:
@@ -405,7 +369,6 @@ class Boto3S3Client(S3Client):
             CopySource={"Bucket": sb, "Key": src_key},
         )
 
-
 class LocalFSClient(S3Client):
     """Filesystem-backed stand-in used by unit tests and offline runs."""
 
@@ -462,7 +425,6 @@ class LocalFSClient(S3Client):
         data = self.get_object(src_key)
         self.put_object(dst_key, data)
 
-
 def get_s3_client() -> S3Client:
     if S3_BACKEND == "boto3":
         return Boto3S3Client()
@@ -470,10 +432,6 @@ def get_s3_client() -> S3Client:
         return LocalFSClient()
     raise ValueError(f"unknown S3_BACKEND={S3_BACKEND!r}; expected 'boto3' or 'local'")
 
-
-# ---------------------------------------------------------------------------
-# Output helpers / manifests
-# ---------------------------------------------------------------------------
 def write_frequency_results(
     cli: S3Client,
     counters: dict[int, Counter],
@@ -506,7 +464,6 @@ def write_frequency_results(
         }
     return written
 
-
 def object_manifest(cli: S3Client, key: str = VACANCIES_KEY) -> dict:
     info = cli.head_object(key)
     return {
@@ -519,7 +476,6 @@ def object_manifest(cli: S3Client, key: str = VACANCIES_KEY) -> dict:
         "etag": info.etag if info else None,
         "last_modified": info.last_modified if info else None,
     }
-
 
 def build_manifest(tool: str, cli: S3Client | None = None, extra: dict | None = None) -> dict:
     payload = {
@@ -539,7 +495,6 @@ def build_manifest(tool: str, cli: S3Client | None = None, extra: dict | None = 
         payload.update(extra)
     return payload
 
-
 def write_manifest(cli: S3Client, tool: str, payload: dict, local_dir: str) -> str:
     os.makedirs(local_dir, exist_ok=True)
     data = json.dumps(payload, ensure_ascii=False, indent=2, default=str).encode("utf-8")
@@ -550,7 +505,6 @@ def write_manifest(cli: S3Client, tool: str, payload: dict, local_dir: str) -> s
         f.write(data)
     return local_path
 
-
 def sha256_file(path: str, chunk_size: int = 8 * 1024 * 1024) -> str:
     digest = hashlib.sha256()
     with open(path, "rb") as f:
@@ -560,7 +514,6 @@ def sha256_file(path: str, chunk_size: int = 8 * 1024 * 1024) -> str:
                 break
             digest.update(block)
     return digest.hexdigest()
-
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "selftest":

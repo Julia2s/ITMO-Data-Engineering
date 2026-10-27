@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v1.py
+started=2026-10-26 18:15:07
+
 {
   "file_size_bytes": 847619384,
   "filter_mode": "role",
@@ -22,10 +25,10 @@
     "2": 134651,
     "3": 506549
   },
-  "phase_time_read_map_s": 11.745,
-  "phase_time_reduce_s": 0.356,
-  "phase_time_write_s": 0.741,
-  "phase_time_total_s": 12.842,
+  "phase_time_read_map_s": 44.755,
+  "phase_time_reduce_s": 0.492,
+  "phase_time_write_s": 1.661,
+  "phase_time_total_s": 46.909,
   "results": {
     "1": {
       "n_combinations": 1401,
@@ -69,3 +72,7 @@
   },
   "manifest": "data/manifests\\mapreduce_v1.json"
 }
+
+finished=2026-10-26 18:15:55
+exit_code=0
+duration_s=48.510

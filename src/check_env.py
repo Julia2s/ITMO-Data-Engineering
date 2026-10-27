@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import (  # noqa: E402
+from common import (
     S3_BACKEND, S3_ENDPOINT, S3_BUCKET, VACANCIES_KEY, CURATED_KEY,
     get_s3_client,
 )
@@ -19,10 +19,8 @@ WARN = "WARN"
 FAIL = "FAIL"
 _rows: list[tuple[str, str, str]] = []
 
-
 def check(name: str, status: str, detail: str = "") -> None:
     _rows.append((name, status, detail))
-
 
 def check_python() -> None:
     version = sys.version_info
@@ -30,15 +28,12 @@ def check_python() -> None:
     status = OK if version >= (3, 10) else FAIL
     check("Python >= 3.10", status, f"{text} ({sys.executable})")
 
-
 def check_packages() -> None:
     for module, label in [
         ("boto3", "boto3"),
         ("duckdb", "duckdb"),
         ("psutil", "psutil"),
         ("matplotlib", "matplotlib"),
-        ("reportlab", "reportlab"),
-        ("pypdf", "pypdf"),
     ]:
         spec = importlib.util.find_spec(module)
         if spec is None:
@@ -47,9 +42,8 @@ def check_packages() -> None:
         try:
             mod = __import__(module)
             check(f"package {label}", OK, getattr(mod, "__version__", "installed"))
-        except Exception as exc:  # pragma: no cover - broken install
+        except Exception as exc:
             check(f"package {label}", FAIL, f"{type(exc).__name__}: {exc}")
-
 
 def check_endpoint() -> None:
     if S3_BACKEND != "boto3":
@@ -64,7 +58,6 @@ def check_endpoint() -> None:
     except OSError as exc:
         check(f"S3 endpoint {S3_ENDPOINT}", FAIL,
               f"TCP {host}:{port}: {exc} — запустите: docker compose up -d")
-
 
 def check_storage() -> None:
     try:
@@ -91,16 +84,14 @@ def check_storage() -> None:
         check(f"object {CURATED_KEY}", OK,
               f"{curated.size:,} B ({curated.size / 2**20:.2f} MiB)")
 
-
 def check_local_dirs() -> None:
-    for name in ("report/logs", "report/images", "report/screenshots", "data"):
+    for name in ("report/logs", "report/images", "data"):
         path = Path(name)
         if path.exists():
             check(f"dir {name}", OK, "есть")
         else:
             path.mkdir(parents=True, exist_ok=True)
             check(f"dir {name}", WARN, "создана")
-
 
 def check_docker() -> None:
     """Best-effort container check; Docker may be unavailable in CI."""
@@ -122,7 +113,6 @@ def check_docker() -> None:
     healthy = [ln for ln in lines if "healthy" in ln.lower() or "up" in ln.lower()]
     check("docker compose", OK if healthy else WARN,
           " | ".join(lines)[:300])
-
 
 def main() -> int:
     check_python()
@@ -148,7 +138,6 @@ def main() -> int:
         return 1
     print("\n  Окружение готово к запуску: python src/run_all.py")
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

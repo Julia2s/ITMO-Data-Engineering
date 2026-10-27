@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\optimized_mapreduce.py prepare
+started=2026-10-26 18:17:26
+
 {
   "action": "prepare",
   "rows": 3534,
@@ -14,8 +17,12 @@
   "size_kib": 315.09,
   "s3_key": "curated/devops_skills.csv",
   "local_path": "data/curated_devops_skills.csv",
-  "phase_time_filter_s": 10.122,
-  "phase_time_put_s": 0.04,
-  "phase_time_total_s": 10.162,
+  "phase_time_filter_s": 11.7,
+  "phase_time_put_s": 0.05,
+  "phase_time_total_s": 11.75,
   "manifest": "data/manifests\\optimized_prepare.json"
 }
+
+finished=2026-10-26 18:17:39
+exit_code=0
+duration_s=12.995

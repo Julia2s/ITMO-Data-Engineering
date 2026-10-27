@@ -26,7 +26,6 @@ EXPERIENCE_ORDER = [
     "Более 6 лет",
 ]
 
-
 def _load_devops_with_salary(cli) -> tuple[list[dict], dict]:
     stats = ReadStats()
     out: list[dict] = []
@@ -52,7 +51,6 @@ def _load_devops_with_salary(cli) -> tuple[list[dict], dict]:
         "reader": stats.as_dict(),
     }
 
-
 def _quantile(data: list[float], q: float) -> float:
     if not data:
         return 0
@@ -61,7 +59,6 @@ def _quantile(data: list[float], q: float) -> float:
     lo = int(pos)
     hi = min(lo + 1, len(s) - 1)
     return s[lo] + (s[hi] - s[lo]) * (pos - lo)
-
 
 def _write_csv(cli, name: str, header: list[str], body: list[list]) -> str:
     buf = io.StringIO()
@@ -76,7 +73,6 @@ def _write_csv(cli, name: str, header: list[str], body: list[list]) -> str:
         f.write(data)
     cli.put_object(f"{OUTPUT_PREFIX}/{name}", data, content_type="text/csv; charset=utf-8")
     return local_path
-
 
 def run() -> dict:
     os.makedirs(LOCAL_OUT_DIR, exist_ok=True)
@@ -138,7 +134,6 @@ def run() -> dict:
     manifest = build_manifest("experience", cli, {"summary": summary, "stats": stats})
     result["manifest"] = write_manifest(cli, "experience", manifest, MANIFEST_DIR)
     return result
-
 
 if __name__ == "__main__":
     res = run()

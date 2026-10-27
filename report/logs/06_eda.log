@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\eda.py
+started=2026-10-26 18:16:27
+
 ======================================================================
 EXPLORATORY DATA ANALYSIS — it_vacancies_2024.csv
 ======================================================================
@@ -118,3 +121,7 @@ P90:    375 000 ₽
   Нет опыта                              243
 
 Все результаты сохранены в data/eda/ и s3://results/eda/
+
+finished=2026-10-26 18:16:43
+exit_code=0
+duration_s=16.635

@@ -19,7 +19,6 @@ MANIFESTS = {
 }
 STACK_SIZES = (1, 2, 3)
 
-
 def load_canonical(path: str) -> list[tuple[tuple, int]]:
     rows: list[tuple[tuple, int]] = []
     with open(path, "r", encoding="utf-8") as f:
@@ -34,7 +33,6 @@ def load_canonical(path: str) -> list[tuple[tuple, int]]:
     rows.sort(key=lambda kv: (len(kv[0]), -kv[1], kv[0]))
     return rows
 
-
 def _first_diff(a: list[tuple], b: list[tuple]) -> dict | None:
     for i in range(min(len(a), len(b))):
         if a[i] != b[i]:
@@ -42,7 +40,6 @@ def _first_diff(a: list[tuple], b: list[tuple]) -> dict | None:
     if len(a) != len(b):
         return {"position": min(len(a), len(b)), "a": None, "b": None}
     return None
-
 
 def compare_pair(a_name: str, a_path: str, b_name: str, b_path: str) -> dict:
     a = load_canonical(a_path)
@@ -62,7 +59,6 @@ def compare_pair(a_name: str, a_path: str, b_name: str, b_path: str) -> dict:
         "diff_first": None if match else _first_diff(a, b),
     }
 
-
 def load_manifest(name: str) -> dict | None:
     path = Path(MANIFESTS[name])
     if not path.exists():
@@ -71,7 +67,6 @@ def load_manifest(name: str) -> dict | None:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return None
-
 
 def manifest_checks() -> dict:
     """Cross-check result-file sizes and matched-row counts against manifests."""
@@ -109,7 +104,6 @@ def manifest_checks() -> dict:
         "rows_matched": matched,
     }
 
-
 def run() -> dict:
     summary = {"comparisons": [], "all_match": True, "manifest_checks": manifest_checks()}
     if not summary["manifest_checks"]["ok"]:
@@ -129,7 +123,6 @@ def run() -> dict:
             if not r["match"]:
                 summary["all_match"] = False
 
-    # Cross-check total frequency consistency across k for the same source.
     for name, directory in SOURCES.items():
         try:
             sums = {
@@ -140,7 +133,6 @@ def run() -> dict:
             continue
         summary.setdefault("total_frequency", {})[name] = sums
     return summary
-
 
 if __name__ == "__main__":
     res = run()

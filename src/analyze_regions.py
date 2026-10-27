@@ -27,19 +27,15 @@ LOCAL_OUT_DIR = "data/results_regions"
 OUTPUT_PREFIX = "results/regions"
 MANIFEST_DIR = "data/manifests"
 
-
 def _norm(text: str) -> str:
     return unicodedata.normalize("NFC", (text or "").lower()).replace("ё", "е")
-
 
 def is_remote(row: dict) -> bool:
     schedule = _norm(row.get("schedule", ""))
     return "удален" in schedule or "remote" in schedule
 
-
 def is_remote_region(region: str) -> bool:
     return region.strip() in REMOTE_ALIASES or "удален" in _norm(region)
-
 
 def _load_devops(cli) -> tuple[list[dict], dict]:
     stats = ReadStats()
@@ -66,12 +62,10 @@ def _load_devops(cli) -> tuple[list[dict], dict]:
         "reader": stats.as_dict(),
     }
 
-
 def _pct(value: float, total: float) -> float:
     if not total:
         return 0.0
     return round(100 * value / total, 1)
-
 
 def _quantile(data: list[float], q: float) -> float:
     if not data:
@@ -81,7 +75,6 @@ def _quantile(data: list[float], q: float) -> float:
     lo = int(pos)
     hi = min(lo + 1, len(s) - 1)
     return s[lo] + (s[hi] - s[lo]) * (pos - lo)
-
 
 def _build_skill_freq(rows: list[dict]) -> dict[int, Counter]:
     out: dict[int, Counter] = {1: Counter(), 2: Counter(), 3: Counter()}
@@ -96,7 +89,6 @@ def _build_skill_freq(rows: list[dict]) -> dict[int, Counter]:
             for c in combinations(sorted(skills), 3):
                 out[3][c] += 1
     return out
-
 
 def analyze_one_region(rows: list[dict], global_freq: Counter, global_n_skills: int) -> dict:
     n_total = len(rows)
@@ -146,12 +138,10 @@ def analyze_one_region(rows: list[dict], global_freq: Counter, global_n_skills: 
         "top_demand_index": [{"skill": s, "index": idx} for s, idx in demand_indexes_sorted],
     }
 
-
 def _select(rows: list[dict], region: str) -> list[dict]:
     if is_remote_region(region):
         return [r for r in rows if r["remote"]]
     return [r for r in rows if r["area"] == region]
-
 
 def _write_csv(cli, name: str, header: list[str], body: list[list]) -> str:
     buf = io.StringIO()
@@ -166,7 +156,6 @@ def _write_csv(cli, name: str, header: list[str], body: list[list]) -> str:
         f.write(data)
     cli.put_object(f"{OUTPUT_PREFIX}/{name}", data, content_type="text/csv; charset=utf-8")
     return local_path
-
 
 def run() -> dict:
     os.makedirs(LOCAL_OUT_DIR, exist_ok=True)
@@ -191,8 +180,6 @@ def run() -> dict:
     for region in REGIONS:
         by_region[region] = analyze_one_region(_select(rows, region), global_freq, global_n_skills)
 
-    # Remote work is always reported as a separate slice (the task asks for
-    # three geographic regions; remote is not a city).
     remote_key = "Удалённая работа"
     remote_slice = analyze_one_region(_select(rows, remote_key), global_freq, global_n_skills)
 
@@ -268,7 +255,6 @@ def run() -> dict:
     })
     result["manifest"] = write_manifest(cli, "regions", manifest, MANIFEST_DIR)
     return result
-
 
 if __name__ == "__main__":
     res = run()

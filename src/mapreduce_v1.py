@@ -20,7 +20,6 @@ OUTPUT_PREFIX = "results/mapreduce_v1"
 LOCAL_OUT_DIR = "data/results_v1"
 MANIFEST_DIR = "data/manifests"
 
-
 def mapper_naive(rows: list[dict]) -> list[tuple[tuple, int]]:
     """Reference naive mapper: materialises every emitted (combo, 1) pair."""
     emitted: list[tuple[tuple, int]] = []
@@ -35,13 +34,11 @@ def mapper_naive(rows: list[dict]) -> list[tuple[tuple, int]]:
                 emitted.append((combo, 1))
     return emitted
 
-
 def reducer_naive(emissions: list[tuple[tuple, int]]) -> dict[int, Counter]:
     out: dict[int, Counter] = {k: Counter() for k in STACK_SIZES}
     for combo, _cnt in emissions:
         out[len(combo)][combo] += 1
     return out
-
 
 def run() -> dict:
     """Naive baseline: one full pass over the object, all emissions in RAM.
@@ -118,7 +115,6 @@ def run() -> dict:
     local_manifest = write_manifest(cli, "mapreduce_v1", manifest, MANIFEST_DIR)
     result["manifest"] = local_manifest
     return result
-
 
 if __name__ == "__main__":
     import json

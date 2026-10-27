@@ -29,7 +29,6 @@ METHODS = [
     {"name": "duckdb",       "label": "DuckDB SQL",                "script": "duckdb_skills.py"},
 ]
 
-
 def measure_process_tree_rss(proc: psutil.Process) -> int:
     try:
         total = proc.memory_info().rss
@@ -41,7 +40,6 @@ def measure_process_tree_rss(proc: psutil.Process) -> int:
         return total
     except (psutil.NoSuchProcess, psutil.AccessDenied):
         return 0
-
 
 def run_once(method: dict, run_id: int) -> dict:
     script_path = SCRIPTS_DIR / method["script"]
@@ -97,7 +95,6 @@ def run_once(method: dict, run_id: int) -> dict:
         "log_path": log_path,
     }
 
-
 def _summary(results: list[dict], methods: list[dict]) -> list[dict]:
     summary = []
     for method in methods:
@@ -118,7 +115,6 @@ def _summary(results: list[dict], methods: list[dict]) -> list[dict]:
             "peak_max_mib": round(max(peaks), 2) if peaks else 0.0,
         })
     return summary
-
 
 def run_all() -> dict:
     os.makedirs(LOCAL_OUT_DIR, exist_ok=True)
@@ -178,7 +174,6 @@ def run_all() -> dict:
     with open(f"{LOCAL_OUT_DIR}/profile.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2, default=str)
     return result
-
 
 if __name__ == "__main__":
     res = run_all()

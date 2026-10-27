@@ -26,7 +26,6 @@ MIN_VAC_BASE   = 15
 
 TOP_N = 10
 
-
 def _load_devops(cli) -> tuple[list[dict], list[dict], dict]:
     """Return (all salary rows, salary rows with skills, stats)."""
     stats = ReadStats()
@@ -70,7 +69,6 @@ def _load_devops(cli) -> tuple[list[dict], list[dict], dict]:
     }
     return all_salary, with_skills, stats_dict
 
-
 def _find_base(combo: tuple[str, ...], freq_by_combo: dict, k: int) -> tuple:
     if k == 2:
         s1_freq = freq_by_combo.get((combo[0],), 0)
@@ -84,7 +82,6 @@ def _find_base(combo: tuple[str, ...], freq_by_combo: dict, k: int) -> tuple:
         ]
         return max(candidates, key=lambda c: freq_by_combo.get(c, 0))
     return combo[:-1]
-
 
 def _build_salary_index(rows: list[dict]) -> dict:
     index: dict[tuple, list[int]] = defaultdict(list)
@@ -101,16 +98,13 @@ def _build_salary_index(rows: list[dict]) -> dict:
                 index[combo].append(salary)
     return index
 
-
 def _median_from_list(salaries: list[int]) -> float:
     if not salaries:
         return 0.0
     return float(statistics.median(salaries))
 
-
 def _build_combos_seen(index: dict, k: int) -> list[tuple]:
     return [c for c in index.keys() if len(c) == k]
-
 
 def analyze(rows: list[dict]) -> dict:
     if not rows:
@@ -195,7 +189,6 @@ def analyze(rows: list[dict]) -> dict:
         "n_triples_total": len(triple_results),
     }
 
-
 def _write_csv(cli, name: str, header: list[str], rows: list[list]) -> str:
     buf = io.StringIO()
     w = csv.writer(buf, lineterminator="\n")
@@ -209,7 +202,6 @@ def _write_csv(cli, name: str, header: list[str], rows: list[list]) -> str:
         f.write(data)
     cli.put_object(f"{OUTPUT_PREFIX}/{name}", data, content_type="text/csv; charset=utf-8")
     return local_path
-
 
 def run() -> dict:
     os.makedirs(LOCAL_OUT_DIR, exist_ok=True)
@@ -238,7 +230,6 @@ def run() -> dict:
                  r["delta_rub"], r["delta_pct"]] for r in items]
         result[f"{kind}_local"] = _write_csv(cli, f"{kind}.csv", header, body)
 
-    # Single-skill impact relative to the overall median of the same sample.
     index = _build_salary_index(rows)
     overall_median = result["overall_median"]
     single_rows = []
@@ -262,7 +253,6 @@ def run() -> dict:
          for r in single_rows],
     )
 
-    # One combined "final table" for the report.
     final_rows = []
     for kind, items in [
         ("pair_up", result["pairs_up"]), ("pair_down", result["pairs_down"]),
@@ -304,7 +294,6 @@ def run() -> dict:
     result["manifest"] = write_manifest(cli, "salary", manifest, MANIFEST_DIR)
     return result
 
-
 def _print_block(title: str, items: list[dict], sign: str = "") -> None:
     print(f"\n=== {title} ===")
     for r in items:
@@ -312,7 +301,6 @@ def _print_block(title: str, items: list[dict], sign: str = "") -> None:
         b = ";".join(r["base"])
         print(f"  {sign}{r['delta_rub']:>+8} ₽ ({r['delta_pct']:>+6}%)  {c:<45}  "
               f"med={r['combo_median']} (n={r['combo_n']})  base {b}={r['base_median']} (n={r['base_n']})")
-
 
 if __name__ == "__main__":
     res = run()

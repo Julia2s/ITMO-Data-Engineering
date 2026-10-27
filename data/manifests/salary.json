@@ -1,6 +1,6 @@
 {
   "tool": "salary",
-  "generated_at": "2026-10-26T08:20:22+00:00",
+  "generated_at": "2026-10-26T15:16:58+00:00",
   "variant_role": "DevOps-инженер",
   "filter_mode": "role",
   "environment": {
@@ -16,7 +16,7 @@
     "exists": true,
     "size_bytes": 847619384,
     "etag": "efb65458995932747001aa004592d19c-102",
-    "last_modified": "2026-10-26 08:17:32+00:00"
+    "last_modified": "2026-10-26 08:31:15+00:00"
   },
   "results": {},
   "summary": {

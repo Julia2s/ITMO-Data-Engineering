@@ -26,9 +26,9 @@ exit_code=0
     "3": 506549
   },
   "phase_time_stat_s": 0.005,
-  "phase_time_map_s": 10.715,
-  "phase_time_reduce_write_s": 0.736,
-  "phase_time_total_s": 11.455,
+  "phase_time_map_s": 12.554,
+  "phase_time_reduce_write_s": 0.862,
+  "phase_time_total_s": 13.422,
   "results": {
     "1": {
       "n_combinations": 1401,

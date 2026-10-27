@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\verify.py
+started=2026-10-26 18:16:23
+
 === Verification summary ===
 all_match: True
 
@@ -19,3 +22,7 @@ rows matched: {'v1': 5158, 'v2': 5158, 'duckdb': 5158}
   ✓ manifests consistent
 
 ✓ ВСЕ РЕЗУЛЬТАТЫ СОВПАЛИ (v1 == v2 == duckdb)
+
+finished=2026-10-26 18:16:27
+exit_code=0
+duration_s=4.012

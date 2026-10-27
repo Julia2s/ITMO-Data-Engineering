@@ -21,14 +21,11 @@ LOCAL_OUT_DIR = "data/results_duckdb"
 MANIFEST_DIR = "data/manifests"
 STACK_SIZES = (1, 2, 3)
 
-
 def _q(value: str) -> str:
     return value.replace("'", "''")
 
-
 def _names_sql() -> str:
     return "[" + ", ".join("'" + _q(n) + "'" for n in VACANCY_FIELDS) + "]"
-
 
 def _filter_sql() -> str:
     role = f"TRIM(COALESCE(role, '')) = '{_q(VARIANT_ROLE)}'"
@@ -40,7 +37,6 @@ def _filter_sql() -> str:
     if VARIANT_FILTER_MODE == "name":
         return name
     return f"({role}) OR ({name})"
-
 
 def build_sql(csv_path: str) -> str:
     read_csv = (
@@ -91,20 +87,18 @@ SELECT CAST(3 AS BIGINT), CAST(s1 AS VARCHAR), CAST(s2 AS VARCHAR), CAST(s3 AS V
 ORDER BY k, freq DESC
 """.strip() + "\n"
 
-
 def _init_httpfs() -> None:
     try:
         duckdb.execute("INSTALL httpfs")
     except Exception:
-        pass  # already installed or offline; LOAD reports the real problem
+        pass
     try:
         duckdb.execute("LOAD httpfs")
-    except Exception as exc:  # pragma: no cover - depends on environment
+    except Exception as exc:
         raise RuntimeError(
             "Не удалось загрузить DuckDB httpfs. Проверьте интернет/расширения: "
             f"{exc}"
         ) from exc
-
 
 def run() -> dict:
     cli = get_s3_client()
@@ -187,7 +181,6 @@ def run() -> dict:
     })
     result["manifest"] = write_manifest(cli, "duckdb", manifest, MANIFEST_DIR)
     return result
-
 
 if __name__ == "__main__":
     import json

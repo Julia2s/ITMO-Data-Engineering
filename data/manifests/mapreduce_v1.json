@@ -1,6 +1,6 @@
 {
   "tool": "mapreduce_v1",
-  "generated_at": "2026-10-26T08:25:15+00:00",
+  "generated_at": "2026-10-26T15:20:07+00:00",
   "variant_role": "DevOps-инженер",
   "filter_mode": "role",
   "environment": {
@@ -16,7 +16,7 @@
     "exists": true,
     "size_bytes": 847619384,
     "etag": "efb65458995932747001aa004592d19c-102",
-    "last_modified": "2026-10-26 08:17:32+00:00"
+    "last_modified": "2026-10-26 08:31:15+00:00"
   },
   "results": {},
   "counts": {
@@ -28,9 +28,9 @@
     "n_skills_3": 144024
   },
   "timings": {
-    "read_map_s": 10.369,
-    "reduce_s": 0.318,
-    "write_s": 0.811,
-    "total_s": 11.498
+    "read_map_s": 12.124,
+    "reduce_s": 0.368,
+    "write_s": 0.833,
+    "total_s": 13.326
   }
 }

@@ -30,7 +30,6 @@ METHODS = [
      "script": "optimized_mapreduce.py", "args": ["benchmark-worker"]},
 ]
 
-
 def measure_process_tree_rss(proc: psutil.Process) -> int:
     try:
         total = proc.memory_info().rss
@@ -42,7 +41,6 @@ def measure_process_tree_rss(proc: psutil.Process) -> int:
         return total
     except (psutil.NoSuchProcess, psutil.AccessDenied):
         return 0
-
 
 def run_once(method: dict, run_id: int) -> dict:
     script_path = SCRIPTS_DIR / method["script"]
@@ -85,7 +83,6 @@ def run_once(method: dict, run_id: int) -> dict:
         "stderr_tail": stderr_tail,
     }
 
-
 def load_counts(directory: str) -> dict[int, tuple[int, int]] | None:
     path_dir = Path(directory)
     if not path_dir.exists():
@@ -101,7 +98,6 @@ def load_counts(directory: str) -> dict[int, tuple[int, int]] | None:
             rows = [(r[0], int(r[1])) for r in reader if r and len(r) >= 2]
         out[k] = (len(rows), sum(freq for _, freq in rows))
     return out
-
 
 def compare_outputs() -> dict:
     original = load_counts(RESULT_DIRS["original"])
@@ -120,7 +116,6 @@ def compare_outputs() -> dict:
         "optimized": {k: {"rows": v[0], "sum": v[1]} for k, v in optimized.items()},
         "diffs": diffs,
     }
-
 
 def _summary(results: list[dict], methods: list[dict]) -> list[dict]:
     summary = []
@@ -142,7 +137,6 @@ def _summary(results: list[dict], methods: list[dict]) -> list[dict]:
             "peak_max_mib": round(max(peaks), 2) if peaks else 0.0,
         })
     return summary
-
 
 def run_all() -> dict:
     os.makedirs(LOCAL_OUT_DIR, exist_ok=True)
@@ -200,7 +194,6 @@ def run_all() -> dict:
         "memory_savings": mem_savings,
         "all_runs_ok": all(r["exit_code"] == 0 for r in results),
     }
-
 
 if __name__ == "__main__":
     res = run_all()

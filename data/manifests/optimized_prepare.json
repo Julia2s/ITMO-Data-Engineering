@@ -1,6 +1,6 @@
 {
   "tool": "optimized_prepare",
-  "generated_at": "2026-10-26T08:22:31+00:00",
+  "generated_at": "2026-10-26T15:17:39+00:00",
   "variant_role": "DevOps-инженер",
   "filter_mode": "role",
   "environment": {
@@ -16,7 +16,7 @@
     "exists": true,
     "size_bytes": 847619384,
     "etag": "efb65458995932747001aa004592d19c-102",
-    "last_modified": "2026-10-26 08:17:32+00:00"
+    "last_modified": "2026-10-26 08:31:15+00:00"
   },
   "results": {},
   "counts": {
@@ -38,8 +38,8 @@
     "size_kib": 315.09,
     "s3_key": "curated/devops_skills.csv",
     "local_path": "data/curated_devops_skills.csv",
-    "phase_time_filter_s": 10.122,
-    "phase_time_put_s": 0.04,
-    "phase_time_total_s": 10.162
+    "phase_time_filter_s": 11.7,
+    "phase_time_put_s": 0.05,
+    "phase_time_total_s": 11.75
   }
 }

@@ -29,7 +29,6 @@ elif VARIANT_FILTER_MODE == "name":
 else:
     _PREFILTER = (VARIANT_ROLE.lower(),) + tuple(kw.lower() for kw in VARIANT_NAME_KEYWORDS)
 
-
 def decode_lines(data: bytes) -> list[str]:
     """Split one chunk of complete lines into strings (no trailing blank)."""
     if not data:
@@ -37,7 +36,6 @@ def decode_lines(data: bytes) -> list[str]:
     if data.endswith(b"\n"):
         data = data[:-1]
     return data.decode("utf-8", errors="replace").split("\n")
-
 
 def iter_byte_chunks(cli, key: str, file_size: int, chunk_bytes: int = CHUNK_SIZE_BYTES):
     """Yield (chunk_bytes, is_last) aligned to newline boundaries.
@@ -66,7 +64,6 @@ def iter_byte_chunks(cli, key: str, file_size: int, chunk_bytes: int = CHUNK_SIZ
         pending = buf[nl + 1 :]
     if pending:
         yield pending, True
-
 
 def map_chunk(chunk_lines: list[str]) -> tuple[dict[int, Counter], dict]:
     counters: dict[int, Counter] = {k: Counter() for k in STACK_SIZES}
@@ -107,7 +104,6 @@ def map_chunk(chunk_lines: list[str]) -> tuple[dict[int, Counter], dict]:
         "lines_malformed": n_malformed,
         "events_per_k": events,
     }
-
 
 def run() -> dict:
     cli = get_s3_client()
@@ -186,7 +182,6 @@ def run() -> dict:
     })
     result["manifest"] = write_manifest(cli, "mapreduce_v2", manifest, MANIFEST_DIR)
     return result
-
 
 if __name__ == "__main__":
     import json

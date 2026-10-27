@@ -1,4 +1,3 @@
-# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -7,16 +6,11 @@ venv/
 .env
 .pytest_cache/
 
-# Raw dataset (~808 MiB) and generated caches are not committed.
-# They can be re-created with src/upload.py and src/optimized_mapreduce.py prepare.
 data/it_vacancies_2024.csv
 data/curated_devops_skills.csv
-data/s3/
 
-# OS
 .DS_Store
 Thumbs.db
 
-# Logs are ignored in general, except the captured pipeline logs used by the report.
 *.log
 !report/logs/*.log

@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\optimized_mapreduce.py verify
+started=2026-10-26 18:17:39
+
 {
   "action": "verify",
   "filter_mode": "role",
@@ -8,3 +11,7 @@
   "missing_in_curated": 0,
   "ok": true
 }
+
+finished=2026-10-26 18:17:52
+exit_code=0
+duration_s=12.867

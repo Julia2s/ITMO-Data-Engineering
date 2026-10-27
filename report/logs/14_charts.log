@@ -1,10 +1,17 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\make_charts.py
+started=2026-10-26 18:21:37
+
 Charts generated in report\images: 9/9
   01_growth.png  (67 KiB)
-  02_profile.png  (57 KiB)
+  02_profile.png  (59 KiB)
   03_salary_pairs.png  (68 KiB)
   04_regions.png  (60 KiB)
-  05_optimization.png  (53 KiB)
+  05_optimization.png  (55 KiB)
   06_salary_histogram.png  (36 KiB)
   07_skills_per_vacancy.png  (34 KiB)
   08_freq_vs_salary.png  (58 KiB)
   09_experience.png  (68 KiB)
+
+finished=2026-10-26 18:21:43
+exit_code=0
+duration_s=6.530

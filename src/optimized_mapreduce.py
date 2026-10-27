@@ -22,7 +22,6 @@ OUTPUT_PREFIX = "results/optimized_mapreduce"
 LOCAL_OUT_DIR = "data/results_optimized"
 MANIFEST_DIR = "data/manifests"
 
-
 def prepare() -> dict:
     cli = get_s3_client()
     t0 = time.perf_counter()
@@ -80,7 +79,6 @@ def prepare() -> dict:
                                                         "result": result})
     result["manifest"] = write_manifest(cli, "optimized_prepare", manifest, MANIFEST_DIR)
     return result
-
 
 def run_worker() -> dict:
     cli = get_s3_client()
@@ -142,7 +140,6 @@ def run_worker() -> dict:
     result["manifest"] = write_manifest(cli, "optimized_worker", manifest, MANIFEST_DIR)
     return result
 
-
 def verify() -> dict:
     cli = get_s3_client()
     if cli.head_object(CURATED_KEY) is None:
@@ -183,7 +180,6 @@ def verify() -> dict:
         "missing_in_curated": missing_in_cur,
         "ok": ok,
     }
-
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in ("prepare", "benchmark-worker", "verify"):

@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\analyze_regions.py
+started=2026-10-26 18:16:58
+
 
 DevOps вакансий всего: 5158 (с навыками: 3534)
 
@@ -55,3 +58,7 @@ DevOps вакансий всего: 5158 (с навыками: 3534)
   kubernetes                   71 вакансий  (57.7%)
   ansible                      59 вакансий  (48.0%)
   python                       49 вакансий  (39.8%)
+
+finished=2026-10-26 18:17:13
+exit_code=0
+duration_s=15.201

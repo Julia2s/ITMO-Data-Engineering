@@ -26,10 +26,10 @@ exit_code=0
     "2": 134651,
     "3": 506549
   },
-  "phase_time_read_map_s": 11.113,
-  "phase_time_reduce_s": 0.328,
-  "phase_time_write_s": 0.707,
-  "phase_time_total_s": 12.148,
+  "phase_time_read_map_s": 13.23,
+  "phase_time_reduce_s": 0.406,
+  "phase_time_write_s": 0.898,
+  "phase_time_total_s": 14.535,
   "results": {
     "1": {
       "n_combinations": 1401,

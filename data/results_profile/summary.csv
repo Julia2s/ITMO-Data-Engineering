@@ -1,4 +1,4 @@
 method,label,n_runs,n_ok,wall_median_s,wall_min_s,wall_max_s,peak_median_mib,peak_min_mib,peak_max_mib
-mapreduce_v1,MapReduce v1 (naive),3,3,13.31,12.698,13.373,196.33,195.91,204.02
-mapreduce_v2,MapReduce v2 (optimized),3,3,12.985,12.552,13.692,132.4,127.25,132.97
-duckdb,DuckDB SQL,3,3,8.515,7.549,9.317,1418.5,1418.37,1723.26
+mapreduce_v1,MapReduce v1 (naive),3,3,16.036,14.541,16.063,195.84,195.7,196.66
+mapreduce_v2,MapReduce v2 (optimized),3,3,14.696,14.452,14.964,137.39,136.61,137.47
+duckdb,DuckDB SQL,3,3,9.479,8.009,9.75,1722.28,1710.6,1723.52

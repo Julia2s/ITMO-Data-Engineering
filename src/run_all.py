@@ -29,8 +29,6 @@ STEPS: list[dict] = [
     {"name": "12_profile", "args": ["profile.py"], "long": True},
     {"name": "13_benchmark", "args": ["benchmark_optimization.py"], "long": True},
     {"name": "14_charts", "args": ["make_charts.py"]},
-    {"name": "15_screenshots", "args": ["make_screenshots.py"]},
-    {"name": "16_report", "args": ["make_report.py"], "optional": True},
 ]
 
 
@@ -66,9 +64,6 @@ def run_step(index: int, total: int, step: dict, skip_upload: bool,
 
     script = SRC / step["args"][0]
     if not script.exists():
-        if step.get("optional"):
-            print(f"[{index}/{total}] {name} — skipped (script not found)")
-            return True
         print(f"[{index}/{total}] {name} — FAILED: {script} not found")
         return False
 

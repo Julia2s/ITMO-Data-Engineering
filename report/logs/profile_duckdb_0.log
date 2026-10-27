@@ -16,9 +16,9 @@ exit_code=0
     "3": 506549
   },
   "duckdb_version": "2.0.0",
-  "phase_time_query_s": 6.846,
-  "phase_time_write_s": 1.379,
-  "phase_time_total_s": 8.225,
+  "phase_time_query_s": 7.074,
+  "phase_time_write_s": 1.532,
+  "phase_time_total_s": 8.606,
   "results": {
     "1": {
       "n_combinations": 1401,

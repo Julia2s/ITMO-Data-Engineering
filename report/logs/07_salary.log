@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\analyze_salary.py
+started=2026-10-26 18:16:43
+
 overall_median: 210000 ₽ (787 vacancies with skills+salary)
 all salary rows (incl. no skills): 1110, median 215000 ₽
 n_pairs_total: 582, n_triples_total: 2880
@@ -50,3 +53,7 @@ audit stats: {"rows_matched": 5158, "rows_with_skills": 3534, "rows_with_convert
    -125000 ₽ ( -50.0%)  atlassian jira;devops;prometheus               med=125000 (n=8)  base devops;prometheus=250000 (n=100)
    -122250 ₽ ( -48.9%)  ansible;python;английский язык                 med=127750 (n=10)  base ansible;python=250000 (n=90)
    -120000 ₽ ( -49.0%)  atlassian jira;linux;prometheus                med=125000 (n=10)  base linux;prometheus=245000 (n=132)
+
+finished=2026-10-26 18:16:58
+exit_code=0
+duration_s=14.641

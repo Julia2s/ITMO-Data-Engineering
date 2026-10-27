@@ -1,10 +1,10 @@
 method,label,run_id,wall_seconds,peak_mib,samples,exit_code,log_path
-mapreduce_v2,MapReduce v2 (optimized),1,13.692,132.4,416,0,report/logs/profile_mapreduce_v2_1.log
-duckdb,DuckDB SQL,1,9.317,1723.26,222,0,report/logs/profile_duckdb_1.log
-mapreduce_v1,MapReduce v1 (naive),1,13.373,196.33,408,0,report/logs/profile_mapreduce_v1_1.log
-duckdb,DuckDB SQL,2,7.549,1418.5,176,0,report/logs/profile_duckdb_2.log
-mapreduce_v1,MapReduce v1 (naive),2,13.31,204.02,407,0,report/logs/profile_mapreduce_v1_2.log
-mapreduce_v2,MapReduce v2 (optimized),2,12.552,127.25,392,0,report/logs/profile_mapreduce_v2_2.log
-mapreduce_v1,MapReduce v1 (naive),3,12.698,195.91,399,0,report/logs/profile_mapreduce_v1_3.log
-mapreduce_v2,MapReduce v2 (optimized),3,12.985,132.97,403,0,report/logs/profile_mapreduce_v2_3.log
-duckdb,DuckDB SQL,3,8.515,1418.37,182,0,report/logs/profile_duckdb_3.log
+mapreduce_v2,MapReduce v2 (optimized),1,14.964,136.61,416,0,report/logs/profile_mapreduce_v2_1.log
+duckdb,DuckDB SQL,1,9.75,1722.28,221,0,report/logs/profile_duckdb_1.log
+mapreduce_v1,MapReduce v1 (naive),1,16.036,195.7,440,0,report/logs/profile_mapreduce_v1_1.log
+duckdb,DuckDB SQL,2,9.479,1723.52,206,0,report/logs/profile_duckdb_2.log
+mapreduce_v1,MapReduce v1 (naive),2,16.063,195.84,450,0,report/logs/profile_mapreduce_v1_2.log
+mapreduce_v2,MapReduce v2 (optimized),2,14.696,137.47,406,0,report/logs/profile_mapreduce_v2_2.log
+mapreduce_v1,MapReduce v1 (naive),3,14.541,196.66,412,0,report/logs/profile_mapreduce_v1_3.log
+mapreduce_v2,MapReduce v2 (optimized),3,14.452,137.39,408,0,report/logs/profile_mapreduce_v2_3.log
+duckdb,DuckDB SQL,3,8.009,1710.6,177,0,report/logs/profile_duckdb_3.log

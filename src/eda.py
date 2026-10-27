@@ -19,7 +19,6 @@ LOCAL_OUT_DIR = "data/eda"
 OUTPUT_PREFIX = "results/eda"
 MANIFEST_DIR = "data/manifests"
 
-
 def _quantile(data: list[float], q: float) -> float:
     if not data:
         return 0
@@ -29,10 +28,8 @@ def _quantile(data: list[float], q: float) -> float:
     hi = min(lo + 1, len(s) - 1)
     return s[lo] + (s[hi] - s[lo]) * (pos - lo)
 
-
 def _fmt_rub(v: float) -> str:
     return f"{int(v):,} ₽".replace(",", " ")
-
 
 def run() -> dict:
     os.makedirs(LOCAL_OUT_DIR, exist_ok=True)
@@ -210,7 +207,6 @@ def run() -> dict:
     manifest = build_manifest("eda", cli, {"summary": summary})
     result["manifest"] = write_manifest(cli, "eda", manifest, MANIFEST_DIR)
     return result
-
 
 if __name__ == "__main__":
     res = run()

@@ -1,3 +1,6 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\analyze_experience.py
+started=2026-10-26 18:17:13
+
 DevOps вакансий с зарплатой: 1110
 {"rows_matched": 5158, "rows_with_convertible_salary": 1110, "filter_mode": "role", "reader": {"lines_total": 229389, "rows_parsed": 229387, "skipped_blank": 1, "skipped_malformed": 1, "skipped_header": 0}}
 
@@ -38,3 +41,7 @@ DevOps вакансий с зарплатой: 1110
   docker                            28
   devops                            22
   ansible                           20
+
+finished=2026-10-26 18:17:26
+exit_code=0
+duration_s=13.136

@@ -1,6 +1,6 @@
 {
   "tool": "duckdb",
-  "generated_at": "2026-10-26T08:25:36+00:00",
+  "generated_at": "2026-10-26T15:20:30+00:00",
   "variant_role": "DevOps-инженер",
   "filter_mode": "role",
   "environment": {
@@ -16,7 +16,7 @@
     "exists": true,
     "size_bytes": 847619384,
     "etag": "efb65458995932747001aa004592d19c-102",
-    "last_modified": "2026-10-26 08:17:32+00:00"
+    "last_modified": "2026-10-26 08:31:15+00:00"
   },
   "results": {},
   "duckdb_version": "2.0.0",
@@ -30,8 +30,8 @@
   },
   "sql_local_path": "data/results_duckdb/query.sql",
   "timings": {
-    "query_s": 5.511,
-    "write_s": 1.622,
-    "total_s": 7.133
+    "query_s": 5.286,
+    "write_s": 1.207,
+    "total_s": 6.493
   }
 }

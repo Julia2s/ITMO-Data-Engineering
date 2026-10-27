@@ -1,45 +1,52 @@
+$ C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\benchmark_optimization.py
+started=2026-10-26 18:20:30
+
 === Warmup: each method once (excluded from report) ===
 
 --- MapReduce v2 (raw CSV) (run 0) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
-   warmup original: wall=13.385s, peak=130.79 MiB, exit=0
+   warmup original: wall=14.737s, peak=131.4 MiB, exit=0
 
 --- MapReduce v2 (curated CSV) (run 0) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\optimized_mapreduce.py benchmark-worker
-   warmup optimized: wall=2.066s, peak=112.98 MiB, exit=0
+   warmup optimized: wall=2.24s, peak=113.25 MiB, exit=0
 
 === Benchmark optimization: 3 rounds × 2 methods (interleaved) ===
 
 --- MapReduce v2 (curated CSV) (run 1) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\optimized_mapreduce.py benchmark-worker
-    -> MapReduce v2 (curated CSV)               run 1: wall= 2.133s  peak= 113.01 MiB  exit=0
+    -> MapReduce v2 (curated CSV)               run 1: wall= 2.268s  peak= 113.05 MiB  exit=0
 
 --- MapReduce v2 (raw CSV) (run 1) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
-    -> MapReduce v2 (raw CSV)                   run 1: wall=12.916s  peak= 133.05 MiB  exit=0
+    -> MapReduce v2 (raw CSV)                   run 1: wall=14.289s  peak= 129.94 MiB  exit=0
 
 --- MapReduce v2 (raw CSV) (run 2) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
-    -> MapReduce v2 (raw CSV)                   run 2: wall=13.314s  peak= 130.33 MiB  exit=0
+    -> MapReduce v2 (raw CSV)                   run 2: wall=14.052s  peak= 135.75 MiB  exit=0
 
 --- MapReduce v2 (curated CSV) (run 2) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\optimized_mapreduce.py benchmark-worker
-    -> MapReduce v2 (curated CSV)               run 2: wall= 2.175s  peak= 113.35 MiB  exit=0
+    -> MapReduce v2 (curated CSV)               run 2: wall= 2.147s  peak= 115.01 MiB  exit=0
 
 --- MapReduce v2 (curated CSV) (run 3) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\optimized_mapreduce.py benchmark-worker
-    -> MapReduce v2 (curated CSV)               run 3: wall= 2.055s  peak= 114.40 MiB  exit=0
+    -> MapReduce v2 (curated CSV)               run 3: wall= 2.175s  peak= 112.99 MiB  exit=0
 
 --- MapReduce v2 (raw CSV) (run 3) ---
     cmd: C:\Users\Юлия\Documents\ITMO-Data-Engineering\.venv\Scripts\python.exe C:\Users\Юлия\Documents\ITMO-Data-Engineering\src\mapreduce_v2.py
-    -> MapReduce v2 (raw CSV)                   run 3: wall=13.162s  peak= 132.48 MiB  exit=0
+    -> MapReduce v2 (raw CSV)                   run 3: wall=14.190s  peak= 128.67 MiB  exit=0
 
 === Optimization Benchmark Summary ===
 Method                                   n_ok   wall_med_s   wall_min_s   wall_max_s   peak_med_MiB
 ----------------------------------------------------------------------------------------------------
-MapReduce v2 (raw CSV)                     3/3       13.162       12.916       13.314         132.48
-MapReduce v2 (curated CSV)                 3/3        2.133        2.055        2.175         113.35
+MapReduce v2 (raw CSV)                     3/3       14.190       14.052       14.289         129.94
+MapReduce v2 (curated CSV)                 3/3        2.175        2.147        2.268         113.05
 
 Outputs identical (raw vs curated): True
-Speedup:  6.17× faster (curated vs raw)
-Memory:   1.17× less (curated vs raw)
+Speedup:  6.52× faster (curated vs raw)
+Memory:   1.15× less (curated vs raw)
+
+finished=2026-10-26 18:21:37
+exit_code=0
+duration_s=66.676
